@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+
+<struts>
+	<package name="admin-default" extends="struts-default"
+		abstract="true">
+		<interceptors>
+			<interceptor name="pagerInterceptor"
+				class="com.yuncai.modules.web.interceptor.PagerInterceptor" />
+			<interceptor name="remoteIpInterceptor"
+				class="com.yuncai.modules.web.interceptor.RemoteIpInterceptor" />
+		</interceptors>
+	</package>
+	
+	<package name="admin" extends="admin-default" namespace="/apk">
+		
+		<!-- 客户端公告管理 -->
+		<action name="apkNotice" class="adminApkNoticeAction">
+			<interceptor-ref name="completeStack" />
+			<interceptor-ref name="pagerInterceptor" />
+			<result name="list">/admin/apk/noticeList.jsp</result>
+			<result name="view">/admin/apk/noticeView.jsp</result>
+			<result name="edit">/admin/apk/noticeSave.jsp</result>
+			<result name="success" type="redirect">/apk/apkNotice.php</result>
+			<result name="error" type="redirect">/admin/error.jsp</result>
+		</action>
+		
+		<!-- 客户端Push管理 -->
+		<action name="apkPush" class="adminApkPushAction">
+			<interceptor-ref name="completeStack" />
+			<interceptor-ref name="pagerInterceptor" />
+			<result name="list">/admin/apk/pushList.jsp</result>
+			<result name="view">/admin/apk/pushView.jsp</result>
+			<result name="edit">/admin/apk/pushSave.jsp</result>
+			<result name="success" type="redirect">/apk/apkPush.php</result>
+			<result name="error" type="redirect">/admin/error.jsp</result>
+		</action>
+		
+		<!-- 客户端渠道管理 -->
+		<action name="apkPackage" class="adminApkPackageAction">
+			<interceptor-ref name="completeStack" />
+			<interceptor-ref name="pagerInterceptor" />
+			<result name="list">/admin/apk/packageList.jsp</result>
+			<result name="view">/admin/apk/packageView.jsp</result>
+			<result name="edit">/admin/apk/packageSave.jsp</result>
+			<result name="success" type="redirect">/admin/success.jsp</result>
+			<result name="error" type="redirect">/admin/error.jsp</result>
+		</action>
+		
+		<!-- 客户端APK包管理 -->
+		<action name="apkManage" class="adminApkManageAction">
+			<interceptor-ref name="completeStack" />
+			<interceptor-ref name="pagerInterceptor" />
+			<result name="list">/admin/apk/manageList.jsp</result>
+			<result name="view">/admin/apk/manageView.jsp</result>
+			<result name="edit">/admin/apk/manageSave.jsp</result>
+			<result name="add">/admin/apk/manageAdd.jsp</result>
+			<result name="success" type="redirect">/apk/apkManage.php</result>
+			<result name="error" type="redirect">/admin/error.jsp</result>
+		</action>
+		
+		<!-- 客户端广告图管理 -->
+		<action name="apkPic" class="adminApkPicAction">
+			<interceptor-ref name="completeStack" />
+			<interceptor-ref name="pagerInterceptor" />
+			<!--  -->
+			<result name="list">/admin/apk/PicList.jsp</result>
+			<result name="view">/admin/apk/PicView.jsp</result>
+			<result name="edit">/admin/apk/PicSave.jsp</result>
+			<result name="success" type="redirect">/apk/apkPic.php</result>
+		</action>
+		
+		<!-- 页面管理  -->
+		<action name="pagesInfo" class="pagesInfoAction">
+			<result name="index">/admin/apk/pagesInfoList.jsp</result>
+		</action>
+	</package>
+</struts>

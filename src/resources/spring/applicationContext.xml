@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 使用 annotation --> 
+	<context:annotation-config />
+	
+	<!-- 使用 annotation 自动注册bean,并检查@Controller注解已被注入 --> 
+	<context:component-scan base-package="com.yuncai.modules" />
+
+	<!-- 持久化 配置管理 Oracle-->
+	<import resource="applicationContext-persistence.xml" />
+	
+	<!-- 持久化 配置管理 sql-->
+	<import resource="applicationContext-sqlpersistence.xml" />
+	
+	<!-- 事务　 配置管理 -->
+	<import resource="applicationContext-transaction.xml" />
+	
+	<import resource="applicationContext-sqltransaction.xml" />
+	
+		
+	
+</beans>

@@ -1,0 +1,282 @@
+@charset "utf-8";
+#headerContent,#arear,#footer{ width:1002px; margin:0 auto}
+#headerContent .headerMenu .menu ul .tip1 a{ color:#1761AB; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+#headerContent .headerMenu .menu ul .tip2 a{}
+#headerContent .headerMenu .menu ul .tip3 a{}
+#headerContent .headerMenu .menu ul .tip4 a{}
+#headerContent .headerMenu .menu ul .tip5 a{}
+#headerContent .headerMenu .menu ul .tip6 a{}
+#headerContent .headerMenu .menu ul .tip7 a{}
+#headerContent .headerMenu .menu ul .tip8 a{}
+#headerContent .headerMenu .menu ul .tip9 a{}
+/*内容样式开始*/
+#arear{ clear:both; padding-top:10px;}
+/*导航样式开始*/
+#arear .memberLeft{ float:left; width:178px; border:1px solid #D4D4D4; border-top:none; margin-top:10px;margin-left:8px !important; margin-left:4px;}
+#arear .memberLeft .memberNavmenu{ float:left; width:178px; padding-bottom:5px;}
+#arear .memberLeft .memberNavmenu .account{ float:left; width:145px; display:block; padding-left:33px; font-weight:bold; font-size:14px; color:#000; line-height:30px; background:#F5F5F5 url(../images/account.gif) no-repeat 12px center;border-top:1px solid #D4D4D4;border-bottom:1px solid #D4D4D4;}
+#arear .memberLeft .memberNavmenu .record{ float:left; width:143px; display:block; padding-left:35px; font-weight:bold; font-size:14px; color:#000; line-height:30px; background:#F5F5F5 url(../images/record.gif) no-repeat 10px center;border-top:1px solid #D4D4D4;border-bottom:1px solid #D4D4D4;}
+#arear .memberLeft .memberNavmenu .data{ float:left; width:143px; display:block; padding-left:35px; font-weight:bold; font-size:14px; color:#000; line-height:30px; background:#F5F5F5 url(../images/data.gif) no-repeat 12px center;border-top:1px solid #D4D4D4;border-bottom:1px solid #D4D4D4;}
+#arear .memberLeft .memberNavmenu .integral{ float:left; width:143px; display:block; padding-left:35px; font-weight:bold; font-size:14px; color:#000; line-height:30px; background:#F5F5F5 url(../images/integral.gif) no-repeat 10px center;border-top:1px solid #D4D4D4;border-bottom:1px solid #D4D4D4;}
+#arear .memberLeft .memberNavmenu .spread{ float:left; width:143px; display:block; padding-left:35px; font-weight:bold; font-size:14px; color:#000; line-height:30px; background:#F5F5F5 url(../images/spread.gif) no-repeat 10px center;border-top:1px solid #D4D4D4;border-bottom:1px solid #D4D4D4;}
+#arear .memberLeft .memberNavmenu ul{}
+#arear .memberLeft .memberNavmenu ul li{ float:left; width:158px; display:block; line-height:24px; padding-left:10px; margin-top:5px;}
+#arear .memberLeft .memberNavmenu ul li a{ display:block; padding-left:10px;}
+#arear .memberLeft .memberNavmenu ul li a:hover{ display:block;background-color:#2184D4; color:#FFF}
+#arear .memberLeft .memberNavmenu ul .memberTip a{ background-color:#2184D4; display:block; color:#FFF}
+/*导航样式结束*/
+
+#arear .memberRight{ float:right; width:805px; margin-top:10px;}
+#arear .memberRight .memberTitle{ float:left; width:788px; border:1px solid  #FFDC8A; padding-left:15px; background-color:#FFFAEE; line-height:45px;}
+#arear .memberRight .memberTitle .memberUser{color:#2184D4}
+#arear .memberRight .memberTitle .memberMoney{color:#FF0000; font-weight:bold;}
+#arear .memberRight .memberCont{ float:left; width:783px; border:1px solid #D4D4D4; margin-top:10px; padding:10px;background:url(../images/memberCont.jpg) no-repeat left top;}
+#arear .memberRight .memberContTitle{ float:left; width:783px; border-bottom:1px solid #2184D4; }
+#arear .memberRight .memberContTitle h2{ float:left; font-weight:bold; font-size:16px;color:#000; display:block; margin-top:8px;}
+#arear .memberRight .memberContTitle ul{ padding-left:70px; float:left;}
+#arear .memberRight .memberContTitle ul li{ float:left; display:block; width:120px; text-align:center; font-size:14px; margin-left:10px !important; margin-left:5px; line-height:35px;}
+#arear .memberRight .memberContTitle ul li a{ display:block;}
+#arear .memberRight .memberContTitle ul li a:hover{ display:block; background-color:#2184D4; color:#FFF; font-weight:bold;}
+#arear .memberRight .memberContTitle ul .memberCuuer a{ display:block; background-color:#2184D4; color:#FFF; font-weight:bold;}
+#arear .memberRight .memberArear{ float:left; width:783px; margin-top:15px;}
+#arear .memberRight .memberArear .warning{ float:left; width:743px; padding-left:40px; background:#FFFBE1 url(../images/warning.jpg) no-repeat 10px center; line-height:35px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90;}
+#arear .memberRight .memberArear .prompt{ float:left; width:753px; background-color:#F8F8F8; margin-top:15px; line-height:24px; padding:15px; color:#0E0E0E}
+#arear .memberRight .memberArear .prompt p{ margin-top:10px;line-height:24px;}
+#arear .memberRight .memberArear .prompt .bold{ font-weight:bold;}
+#arear .memberRight .memberArear .rechargePay{ float:left;width:783px; margin-top:50px; color:#000; padding-bottom:50px;}
+#arear .memberRight .memberArear .rechargePay table{border-collapse:collapse;}
+#arear .memberRight .memberArear .rechargePay table td{ padding:13px;}
+#arear .memberRight .memberArear .rechargePay .rechargeBtn{ float:left; display:block;}
+#arear .memberRight .memberArear .rechargePay .tutorials{ font-weight:bold; color:#005AEF; margin-left:20px !important; margin-left:10px; line-height:22px; margin-top:13px;}
+#arear .memberRight .memberArear .rechargePay .tutorials:hover{color:#005AEF; text-decoration:underline}
+#arear .memberRight .memberArear .rechargePay .smallTable{border-collapse:collapse}
+#arear .memberRight .memberArear .rechargePay .smallTable td{ padding:5px;}
+#arear .memberRight .memberArear .recharge{ float:left;width:783px; margin-top:15px; color:#000}
+#arear .memberRight .memberArear .recharge table{border-collapse:collapse;}
+#arear .memberRight .memberArear .recharge table td{ padding:9px;}
+#arear .memberRight .memberArear .inputBox{ width:220px; height:26px; line-height:26px; border:1px solid #C2C0C0; padding-left:2px;}
+.red{ color:#FF0000}
+.blue{ color:#3366CC}
+#arear .memberRight .memberArear .memberMoney{color:#FF0000; font-weight:bold; }
+#arear .memberRight .memberArear .blackBold{ font-weight:bold; font-size:13px;}
+#arear .memberRight .memberArear .gray{ color:#7E7E7E}
+#arear .memberRight .memberArear .orange{ font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#2184D4}
+
+#arear .memberRight .accountsMenu{ float:left; width:783px; border-bottom:1px solid #2184D4; }
+#arear .memberRight .accountsMenu h2{ float:left; font-weight:bold; font-size:16px;color:#000; display:block;margin-top:8px;}
+#arear .memberRight .accountsMenu ul{ padding-left:70px; float:left;}
+#arear .memberRight .accountsMenu ul li{ float:left; display:block; width:96px; text-align:center; cursor:pointer; font-size:14px; margin-left:10px !important; margin-left:5px; line-height:35px;}
+#arear .memberRight .accountsMenu ul li.bg{ display:block; background-color:#2184D4; color:#FFF; font-weight:bold;}
+
+/*投注查询样式开始*/
+.memberContent{ float:left; width:783px;}
+.memberContent table{border-collapse:collapse;}
+.memberContent table th{ background-color:#F5F5F5; line-height:34px;border:1px solid #D3D3D3; font-weight:normal;}
+.memberContent table .timeGray{ border:1px solid #FFF; font-weight:bold; color:#000; padding-left:0}
+.memberContent table td{ padding:5px 0; border:1px solid #D3D3D3;}
+.memberContent table a{ color:#3366CC}
+.memberContent table a:hover{ color:#FF3300; text-decoration:underline}
+.memberContent table .memberGray{ background-color:#F9F9F9}
+.memberContent table .DetailsTitle{ background-color:#F5F5F5; line-height:24px; padding:0;border:1px solid #D3D3D3; font-weight:normal;}
+
+#arear .memberRight .InvestMenu{ float:left; width:783px; border-bottom:1px solid #2184D4; }
+#arear .memberRight .InvestMenu h2{ float:left; font-weight:bold; font-size:16px;color:#000; display:block; margin-top:8px;}
+#arear .memberRight .InvestMenu ul{ padding-left:70px; float:left;}
+#arear .memberRight .InvestMenu ul li{ float:left; display:block; width:120px; text-align:center; cursor:pointer; font-size:14px; margin-left:10px !important; margin-left:5px; line-height:35px;}
+#arear .memberRight .InvestMenu ul li.bg{ display:block; background-color:#2184D4; color:#FFF; font-weight:bold;}
+.InvestCont{ float:left; width:783px;}
+.distrion{ float:left; width:783px; margin-top:10px;}
+.distrion table{border-collapse:collapse;}
+.distrion table td{ padding:5px 10px; border:1px solid #FFDABF;background-color:#FFFBE1; }
+.directions{ float:left; width:761px; margin-top:10px; color:#666; padding:5px 10px;border:1px solid #D3D3D3;} 
+.directions .explain{ color:#333}
+/*投注查询样式结束*/
+
+#arear .memberRight .memberArear .PageNext{ float:left; width:783px; margin-top:10px;}
+#arear .memberRight .memberArear .PageNext table{border-collapse:collapse;}
+#arear .memberRight .memberArear .PageNext table td{ padding:0; border:none}
+#arear .memberRight .memberArear .PageNext table td a{ float:left; display:block; padding:0 5px; margin-right:5px; border:1px solid #CCC}
+#arear .memberRight .memberArear .PageNext table td a:hover{ display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7; cursor:pointer}
+#arear .memberRight .memberArear .PageNext ul{ }
+#arear .memberRight .memberArear .PageNext li{ float:left; display:block; margin-right:5px;}
+#arear .memberRight .memberArear .PageNext li a{ display:block; padding:0 5px; border:1px solid #CCC}
+#arear .memberRight .memberArear .PageNext li a:hover{ display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+#arear .memberRight .memberArear .PageNext .tip{display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+#arear .memberRight .memberArear .PageNext .Record{ float:left; padding-right:5px;}
+#arear .memberRight .memberArear .PageNext .Jump{ float:left; padding-left:5px;}
+#arear .memberRight .memberArear .PageNext .JumpBox{ border:1px solid #CCC; width:40px; text-align:center; height:20px; line-height:20px;}
+#arear .memberRight .memberArear .PageNext .Determine{ display:block; float:left; cursor:pointer; margin-left:4px;width:45px; color:#224EA5; height:22px;background:url(../images/Determine.jpg) no-repeat left top; text-align:center}
+#arear .memberRight .memberArear .PageNext .Determine:hover{color:#FF3300;}
+
+.memberTime{width:70px; height:20px; line-height:18px; border:1px solid #C2C0C0; text-align:center; margin-bottom:0}
+.memberName{width:200px; height:20px; line-height:18px; border:1px solid #C2C0C0; padding-left:2px;margin-bottom:0}
+.memberDown{ height:22px;border:1px solid #C2C0C0;}
+.searchBtn{ width:65px; height:20px; cursor:pointer; margin-bottom:0; line-height:20px; text-align:center; color:#0085D0; border:none;background:url(../images/betSearch.jpg) no-repeat left top;}
+
+.SafeSetContent{ float:left; width:783px;}
+.SafeSetContent table{border-collapse:collapse;}
+.SafeSetContent table th{ background-color:#F5F5F5; line-height:34px;border:1px solid #D3D3D3; font-weight:normal;}
+.SafeSetContent table .timeGray{ border:1px solid #FFF;border-bottom:1px solid #D3D3D3; font-weight:bold; color:#000; padding-left:0}
+.SafeSetContent table td{ padding:5px; border:1px solid #D3D3D3}
+.SafeSetContent table a{ color:#3366CC}
+.SafeSetContent table a:hover{ color:#FF3300; text-decoration:underline}
+.SafeSetContent table .memberGray{ background-color:#F9F9F9}
+.SafeTishi{ float:left; width:733px; padding-left:40px; padding-right:10px; background:#FFFBE1 url(../images/warning.jpg) no-repeat 10px center; line-height:35px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90; margin-bottom:10px;}
+
+.userContent{ float:left; width:783px; font-size:12px;}
+.userContent table{border-collapse:collapse; float:left;width:783px;}
+.userContent table td{ padding:5px;}
+.userCity{height:24px; border:1px solid #C2C0C0; margin-bottom:0}
+.userDate{width:180px; height:24px; line-height:22px; border:1px solid #C2C0C0; padding-left:2px; margin-bottom:0}
+.userAddress{width:300px; height:24px; line-height:22px; border:1px solid #C2C0C0; padding-left:2px; margin-bottom:0}
+.userAlter{ width:130px; height:35px; line-height:35px; text-align:center; cursor:pointer; font-weight:bold; color:#FFF; font-size:16px; border:none;background:url(../images/userBtn.jpg) no-repeat left top;}
+.userAgain{width:130px; height:35px; line-height:35px; text-align:center; font-weight:bold; color:#666;font-size:16px; border:1px solid #CCC;}
+.spreadText{width:450px; height:100px; padding:2px; border:1px solid #C2C0C0; font-size:13px;}
+
+.userContent table a{ color:#3366CC}
+.userContent table a:hover{ color:#FF3300; text-decoration:underline}
+.bindTishi{ float:left; width:777px; margin-bottom:10px; padding:5px 3px;background:#FFFBE1; line-height:22px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90;}
+
+.spreadBanner{ float:left; width:783px; text-align:center}
+.spreadList{float:left; width:783px;}
+.spreadList ul{float:left; width:783px; margin-top:10px;}
+.spreadList li{ float:left; display:block; width:783px; margin-top:5px;}
+.spreadList .spreadTitle{ background-color:#D9EEFF; padding:2px 5px; float:left; width:773px;}
+
+.spreadBtn{ float:left; width:783px; text-align:center; padding:10px 0}
+
+#arear .memberRight .memberArear .userTitle{ float:left; width:763px; margin-bottom:10px; padding:5px 10px;background:#FFFBE1; line-height:22px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90;}
+#arear .memberRight .memberArear .distillTishi{ float:left; width:743px; margin-top:15px; background:#FFFBE1 url(../images/warning.jpg) no-repeat 10px 12px; padding:10px 0 10px 40px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90;}
+#arear .memberRight .memberArear .Integration{ float:left; width:743px; background:#FFFBE1 url(../images/warning.jpg) no-repeat 10px 12px; padding:10px 0 10px 40px; color:#000;border-top:1px dashed #FEBF90; border-bottom:1px dashed #FEBF90; margin-bottom:10px;}
+
+.distillMenu{float:left; width:783px;}
+.distillMenu ul{}
+.distillMenu li{ float:left; display:block; height:30px; line-height:30px; width:170px; font-weight:bold; border-right:5px solid #FFF; text-align:center; margin-bottom:10px; background-color:#F3F3F3}
+.distillMenu .distilTip{ background-color:#5DA1FF; color:#FFF}
+.distOk{ font-size:14px; line-height:30px;}
+.disYinhang{ font-weight:bold; font-size:14px;color:#1761AB;}
+.grayMajor{ background-color:#F3F3F3}
+/*内容样式开始结束*/
+
+/*小窗口样式开始*/
+/*.winArear{float:left;width:365px; height:240px;background:url(../images/Kuang.png) no-repeat left top;position:absolute;left:50%;top:50%;margin-left:-250px;margin-top:-200px;z-index:1001;display:none;}*/
+.winArear{float:left;width:460px;background:url(../images/Kuang02.jpg) no-repeat right top;position:absolute;left:50%;top:50%;margin-left:-250px;margin-top:-180px;z-index:1001;display:none;}
+.winCont{ float:left; width:450px; margin-top:9px;border:1px solid #439EE9; padding-bottom:5px;background-color:white;}
+.winTitle{ float:left; width:448px;text-align:right; padding:2px 0;font-size:14px; border:1px solid #FFF; color:#2184D4; font-weight:bold; background-color:#EDF7FF}
+.winTitle a{ color:#333; line-height:35px; font-weight:normal;}
+.winTitle a:hover{color:#000;text-decoration:underline}
+
+.winTitle .winPay{float:left;font-size:14px;line-height:32px; margin-left:3px; display:block; padding-left:40px;background:url(../images/winPayIco.png) no-repeat left center}
+
+.winPayment{float:left;width:390px; padding-left:60px;font-size:14px; margin-top:10px; line-height:30px;}
+.winBtn{ float:left;width:390px; padding-left:60px;font-size:14px; margin-top:13px;}
+
+.winBtn .payingBtn{ float:left; color:#FFF; font-weight:bold; width:120px; height:35px; display:block; text-align:center; line-height:35px; margin-right:40px !important; margin-right:25px;background:url(../images/winBtnDj.jpg) no-repeat left center;}
+.winBtn .payingBtn:hover{ float:left; color:#FFF; font-weight:bold; width:120px; height:35px; display:block; text-align:center; line-height:35px;background:url(../images/winBtn.jpg) no-repeat left center;}
+
+.winBtn .problemBtn{float:left; color:#333; font-weight:bold; width:140px; height:35px; display:block; text-align:center; line-height:35px; background:url(../images/winBtn02.jpg) no-repeat left center;}
+.winBtn .problemBtn:hover{float:left; color:#333; font-weight:bold; width:140px; height:35px; display:block; text-align:center; line-height:35px; background:url(../images/winBtn03.jpg) no-repeat left center;}
+
+.winReturn{ float:left; width:390px; padding:13px 0 10px 60px;font-size:14px;}
+.winReturn a{ color:#1475C4}
+.winReturn a:hover{ color:#FF3300; text-decoration:underline}
+.lockDiv{width:100%;height:100%;position:absolute;top:0;left:0;background:black;filter:"progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0,finishOpacity=100";opacity:0;z-index:1000;display:none;}
+/*小窗口样式结束*/
+
+/*会员登录注册样式开始*/
+#arear .loginCont{float:left; width:994px;margin-top:10px;margin-left:8px !important; margin-left:4px;}
+#arear .loginCont .loginLeft{ float:left; width:660px; text-align:center;}
+
+#arear .loginCont .loginRight{ float:right; width:300px; padding:15px 10px; border:1px solid #DDD; background-color:#F6F6F6}
+.loginList{ float:left; width:300px;}
+.loginList h2{ float:left; display:block; width:250px; font-weight:bold; margin-left:15px !important; margin-left:8px;font-size:18px;line-height:24px; height:24px; padding-left:35px;background:url(../images/userLogin.png) no-repeat left top;}
+.loginList ul{}
+.loginList li{ float:left; display:block; width:280px; line-height:24px; margin-top:10px; font-size:14px; padding-left:20px; }
+.loginList .loginName{ width:200px; height:24px; line-height:22px; border:1px solid #CCC; padding-left:3px;}
+.loginList .loginCode{width:60px; height:24px; line-height:22px; border:1px solid #CCC; padding-left:3px;margin-right:5px;}
+.loginList .loginNameDj{width:200px; height:24px; line-height:22px;padding-left:3px;border:1px solid #76BBFF;}
+.loginList .loginCodeDj{width:60px; height:24px; line-height:22px; border:1px solid #76BBFF; padding-left:3px;margin-right:5px;}
+.loginList .margin_top_fix{float:left; display:block; width:215px; padding-left:75px;}
+
+.register_wrap{float:left; width:260px; margin-left:20px !important; margin-left:10px; color:#999; border-top:1px dashed #DDD; padding-top:15px; margin-top:20px;}
+.register_wrap a{ color:#1761AB;}
+.register_wrap a:hover{ color:#FF3300; text-decoration:underline;}
+
+.quick_signin{float:left; width:260px; margin-top:10px;margin-left:20px !important; margin-left:10px;}
+.quick_signin .qqLogin{ float:left; width:240px; margin-top:5px; display:block; line-height:18px; background:url(../images/qqLogin.jpg) no-repeat left top; padding-left:20px;}
+.quick_signin a{color:#1761AB;}
+.quick_signin a:hover{ color:#FF3300; text-decoration:underline;}
+
+.buyProcess{float:left; width:994px;margin-top:10px;margin-left:8px !important; margin-left:4px; background:url(../images/process.jpg) no-repeat left top; height:37px; }
+.buyProcess h2{ float:left; display:block; width:140px; text-align:center; line-height:35px; font-weight:bold; font-size:14px;color:#FFF}
+.buyProcess ul{}
+.buyProcess li{ float:left; display:block; width:170px; text-align:center; line-height:35px; font-size:14px; font-weight:bold;}
+.buyProcess .buyTip{ color:#FFF}
+
+.forgerPwd01{float:left; width:994px;margin-top:10px;margin-left:8px !important; margin-left:4px; background:url(../images/forgerPwd01.jpg) no-repeat left top; height:37px; }
+.forgerPwd01 ul{}
+.forgerPwd01 li{ float:left; display:block; width:330px; text-align:center; line-height:35px; font-size:14px; font-weight:bold;}
+.forgerPwd01 .buyTip{ color:#FFF}
+
+.forgerPwd02{float:left; width:994px;margin-top:10px;margin-left:8px !important; margin-left:4px; background:url(../images/forgerPwd02.jpg) no-repeat left top; height:37px; }
+.forgerPwd02 ul{}
+.forgerPwd02 li{ float:left; display:block; width:330px; text-align:center; line-height:35px; font-size:14px; font-weight:bold;}
+.forgerPwd02 .buyTip{ color:#FFF}
+
+.forgerPwd03{float:left; width:994px;margin-top:10px;margin-left:8px !important; margin-left:4px; background:url(../images/forgerPwd03.jpg) no-repeat left top; height:37px; }
+.forgerPwd03 ul{}
+.forgerPwd03 li{ float:left; display:block; width:330px; text-align:center; line-height:35px; font-size:14px; font-weight:bold;}
+.forgerPwd03 .buyTip{ color:#FFF}
+
+.registerCont{float:left; width:920px;margin-top:15px;margin-left:8px !important; margin-left:4px; padding-left:74px;}
+.registerList{ float:left; width:640px;}
+.registerList ul{}
+.registerList li{ float:left; width:640px; display:block; line-height:26px; margin-top:10px;font-size:14px;}
+.registerList li label{ float:left; width:70px; display:block;line-height:26px; }
+.registerList .UserName{ width:220px; height:24px; line-height:24px; border:1px solid #CCC; padding-left:2px; float:left;}
+.registerList .UserCode{width:80px; height:24px; line-height:24px; border:1px solid #CCC; padding-left:2px;margin-right:5px;}
+.registerList .UserNameDj{width:220px; height:24px; line-height:24px;padding-left:2px;border:1px solid #76BBFF;}
+.registerList .UserCodeDJ{width:80px; height:24px; line-height:24px; border:1px solid #76BBFF; padding-left:2px;margin-right:5px;}
+.registerList .Agreement{ float:left; width:575px; display:block; padding-left:65px; font-size:12px;}
+.registerList .orange{ color:#FF3300;font-size:12px;margin-left:5px;}
+.pact{ color:#1761AB; font-size:12px;}
+.pact:hover{ color:#FF3300; text-decoration:underline;font-size:12px;}
+.registerList .msg{ color:#999; margin-left:5px; font-size:12px;}
+.registerList .r_tip{margin-left:5px; font-size:12px;}
+.registerList .icon_correct{ float:left;margin-left:5px;}
+.r_txt{ float:left; clear:both; width:400px; padding-left:70px;}
+
+.registerBtn{background:url(../images/registerBtn.jpg) no-repeat left top; border:none; cursor:pointer; width:112px; height:35px; line-height:35px; font-weight:bold; font-size:16px; color:#FFF; text-align:center;}
+
+.regist_right{ float:right; width:260px; margin-top:10px; border-left:1px dashed #D4D4D4; padding:10px 0 140px 15px;}
+.regist_rightBtn{ float:left; display:block;background:url(../images/hemaiBtn.jpg) no-repeat left top; border:none; cursor:pointer; width:74px; height:23px; line-height:21px; color:#F4F3F3; text-align:center; margin-top:6px;}
+.regist_rightBtn:hover{ color:#FFF; display:block;}
+.regist_right .rightTitle{ float:left; width:260px; display:block; margin-top:18px; font-weight:bold;margin-bottom:2px;}
+.regist_right ul{}
+.regist_right li{ float:left; display:block; width:260px; line-height:24px;}
+.regist_right .register01{background:url(../images/register01.jpg) no-repeat left center; float:left; width:240px; padding-left:20px; }
+.regist_right .register02{background:url(../images/register02.jpg) no-repeat left center; float:left; width:240px; padding-left:20px;}
+.regist_right .register03{background:url(../images/register03.jpg) no-repeat left center; float:left; width:240px; padding-left:20px;}
+.regist_right .register04{background:url(../images/register04.jpg) no-repeat left center; float:left; width:240px; padding-left:20px;}
+
+#arear .memberRight .registerOk{ float:left; width:743px; border:1px solid  #FFDC8A; font-weight:bold; font-size:16px; color:#FF3300; padding:10px 0 10px 60px;line-height:40px;background:#FFFAEE url(../images/registerOk.png) no-repeat 20px center;}
+.regOk_Btn{ float:left; width:785px; margin-top:30px; padding-left:20px;}
+.regOk_Btn a{ float:left; display:block;margin-right:20px !important; margin-right:15px; width:130px; height:35px; line-height:35px; text-align:center; cursor:pointer; font-weight:bold; color:#FFF; font-size:18px; border:none;background:url(../images/userBtn.jpg) no-repeat left top;}
+.regOk_List{ float:left; width:785px; padding-left:20px; margin-top:10px; color:#FF3300}
+.regOk_next{ float:left; width:785px; padding-left:20px; margin-top:30px;}
+.regOk_next ul{}
+.regOk_next li{ float:left; width:740px; line-height:30px; display:block; font-weight:bold; color:#1761AB; font-size:14px;}
+.regOk_next li a{ color:#333; font-size:12px;}
+.regOk_next li a:hover{ color:#FF3300; text-decoration:underline}
+.regOkJc{background:url(../images/jc.gif) no-repeat left center; padding-left:35px; }
+.regOkDlt{background:url(../images/tc.gif) no-repeat left center; padding-left:35px; }
+.regOkZc{background:url(../images/zq.gif) no-repeat left center; padding-left:35px; }
+/*会员登录注册样式结束*/
+
+/*用户注册协议样式开始*/
+.userPactTitle{width:974px; border-bottom:2px solid #2184D4; padding-bottom:5px; background-color:#F5F5F5; padding:5px 10px;}
+.userPactCont{float:left; width:972px; padding:10px; border:1px solid #C4D8EA; border-top:none;}
+.userPactOff{ float:left; width:994px; text-align:center; margin-top:10px; font-weight:bold; font-size:14px;}
+.userPactOff a{ color:#1761AB}
+.userPactOff a:hover{ color:#FF3300; text-decoration:underline}
+/*用户注册协议样式结束*/

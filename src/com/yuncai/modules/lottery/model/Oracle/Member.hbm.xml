@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.yuncai.modules.lottery.model.Oracle.Member"
+		table="t_member">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">s_member</param>
+			</generator>
+		</id>
+		<property name="account" type="java.lang.String">
+			<column name="ACCOUNT" length="40" not-null="true" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" length="50" />
+		</property>
+		<property name="certType" type="java.lang.Integer">
+			<column name="CERT_TYPE" />
+		</property>
+		<property name="certNo" type="java.lang.String">
+			<column name="CERT_NO" length="40" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" length="40" not-null="true" />
+		</property>
+		<property name="rank" type="java.lang.Integer">
+			<column name="RANK" not-null="true" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" length="50" />
+		</property>
+		<property name="mobile" type="java.lang.String">
+			<column name="MOBILE" length="20" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS" not-null="true" />
+		</property>
+		<property name="registerDateTime" type="java.util.Date">
+			<column name="REGISTER_DATE_TIME" length="19" />
+		</property>
+		<property name="lastLoginDateTime" type="java.util.Date">
+			<column name="LAST_LOGIN_DATE_TIME" length="19" />
+		</property>
+		<property name="exprerience" type="java.lang.Integer">
+			<column name="EXPRERIENCE" not-null="true" />
+		</property>
+		<property name="sourceId" type="java.lang.Integer">
+			<column name="SOURCE_ID" not-null="true" />
+		</property>
+		<property name="recommender" type="java.lang.Integer">
+			<column name="RECOMMENDER" />
+		</property>
+		<property name="sign" type="java.lang.String">
+			<column name="SIGN" length="40" />
+		</property>
+		<property name="provider" type="java.lang.String">
+			<column name="PROVIDER" length="20" />
+		</property>
+		<property name="outUid" type="java.lang.String">
+			<column name="OUT_UID" length="50" />
+		</property>
+		<property name="picture" type="java.lang.String">
+			<column name="PICTURE" length="200" />
+		</property>
+		<property name="card" type="java.lang.Integer">
+			<column name="CARD" />
+		</property>
+		<property name="isMobileAuthed" type="java.lang.Integer">
+			<column name="IS_MOBILE_AUTHED" />
+		</property>
+		<property name="ceratePlayDate" type="java.util.Date">
+			<column name="CERATE_PLAY_DATE" length="19" />
+		</property>
+		<property name="playStatus" type="java.lang.Integer">
+			<column name="PLAY_STATUS" />
+		</property>
+		<property name="buySendSms">
+			<column name="buySendSMS" />
+		</property>
+		<property name="phoneNo" type="java.lang.String">
+			<column name="phoneNo" />
+		</property>	
+		<property name="isPhoneBinding" type="java.lang.Integer">
+			<column name="IS_PHONE_BINDING" />
+		</property>				
+		
+		 <property name="nickName" type="java.lang.String">
+            <column name="NICKNAME" length="50" />
+        </property>	
+           <property name="userGradeType" type="java.lang.Integer">
+            <column name="USER_GRADE_TYPE" />
+        </property>
+        <property name="bonus" type="java.lang.Double">
+            <column name="BONUS" />
+        </property>
+        
+        <property name="recommendId" type="java.lang.String">
+            <column name="RECOMMEMD_ID" length="100" />
+        </property>
+        <property name="recommendQuota" type="java.lang.Integer">
+            <column name="RECOMMEMD_QUOTA" length="100" />
+        </property>
+        <property name="recommendEnable" type="java.lang.Integer">
+            <column name="RECOMMEND_ENABLE" length="100" />
+        </property>
+        <property name="mobilBelongingTo" type="java.lang.String">
+            <column name="MOBILBELONGINGTO" length="100" />
+        </property>
+	</class>
+</hibernate-mapping>

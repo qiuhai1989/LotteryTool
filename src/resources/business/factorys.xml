@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--
+  - Application context definition for JPetStore's business layer.
+  - Contains bean references to the transaction manager and to the DAOs in
+  - dataAccessContext-local/jta.xml (see web.xml's "contextConfigLocation").
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+	<!-- 方案解析工厂 -->
+	<bean id="contentFactory" class="com.yuncai.modules.lottery.factorys.verify.ContentFactory">
+		<property name="parserFactoryMap">
+			<map>
+			<entry key="64" value-ref="pl5Parser" />
+			<entry key="63" value-ref="pai3Parser"></entry>
+			<entry key="39" value-ref="dltParser"></entry>
+			<entry key="3" value-ref="qxcParser"></entry>
+			
+			<!-- 老足彩 -->
+			<entry key="74" value-ref="fc14Parser"></entry>
+			<entry key="75" value-ref="r9Parser"></entry>
+			<entry key="2" value-ref="jq4Parser"></entry>
+			<entry key="15" value-ref="bqcParser"></entry>
+			
+			<!-- 竞彩足球 -->
+			<entry key="7207" value-ref="SportteryFootballParser" />
+			<entry key="7202" value-ref="SportteryFootballParser" />
+			<entry key="7203" value-ref="SportteryFootballParser" />
+			<entry key="7204" value-ref="SportteryFootballParser" />
+			<entry key="7201" value-ref="SportteryFootballParser" />
+			<entry key="7206" value-ref="sportteryFootballTurbidParser"></entry>
+			
+			<!-- 竞彩篮球 -->
+			<entry key="7301" value-ref="sportteryBaskbollVerfiyParser"></entry>
+			<entry key="7302" value-ref="sportteryBaskbollVerfiyParser"></entry>
+			<entry key="7303" value-ref="sportteryBaskbollVerfiyParser"></entry>
+			<entry key="7304" value-ref="sportteryBaskbollVerfiyParser"></entry>
+			<entry key="7305" value-ref="sportteryBaskbollHTParser"></entry>
+
+			<!-- 福彩 -->
+			<entry key="5" value-ref="ssqParser" />
+			<entry key="6" value-ref="fc3DParser" />
+			<entry key="13" value-ref="qlcParser" />
+
+			
+			<!-- 高频 -->
+			<entry key="78" value-ref="gd11x5Parser"></entry>
+			<entry key="62" value-ref="syydjlParser"></entry>
+			
+						<!-- 世界杯 -->
+			<entry key="8001" value-ref="sportteryFootballWorldCupParser"></entry>
+
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 排列5content解析器 -->
+	<bean id="pl5Parser" class="com.yuncai.modules.lottery.factorys.verify.PL5Parser" />
+	
+	<!-- 竞彩足球解析器 -->
+	<bean id="SportteryFootballParser" class="com.yuncai.modules.lottery.factorys.verify.SportteryFootballParser" autowire="byName" />
+	
+	<!-- 竞彩足球混串解析器 -->
+	<bean id="sportteryFootballTurbidParser" class="com.yuncai.modules.lottery.factorys.verify.SportteryFootballTurbidParser" autowire="byName" />
+	
+	
+	<!--排列三解析器 -->
+	<bean id="pai3Parser" class="com.yuncai.modules.lottery.factorys.verify.Pai3Parser" />
+	
+	<!-- 任9content解析器 -->
+	<bean id="r9Parser" class="com.yuncai.modules.lottery.factorys.verify.FbSfc9Parser" />
+	
+	<!-- 14content解析器 -->
+	<bean id="fc14Parser" class="com.yuncai.modules.lottery.factorys.verify.FbSfc14Parser" />
+	
+	<!-- 4场进球彩解析器 -->
+	<bean id="jq4Parser" class="com.yuncai.modules.lottery.factorys.verify.FbJq4Parser"/>
+
+	<!-- 六场半全彩解析器 -->
+	<bean id="bqcParser" class="com.yuncai.modules.lottery.factorys.verify.FbBqcParser" />
+	
+	<!-- 大乐透content解析器 -->
+	<bean id="dltParser" class="com.yuncai.modules.lottery.factorys.verify.DltParser" />
+	
+	<!-- 七星彩content解析器 -->
+	<bean id="qxcParser" class="com.yuncai.modules.lottery.factorys.verify.QxcParser" />
+
+	<!-- 双色球content解析器 -->
+	<bean id="ssqParser" class="com.yuncai.modules.lottery.factorys.verify.SsqParser" />
+	<!-- 福彩3Dcontent解析器 -->
+	<bean id="fc3DParser" class="com.yuncai.modules.lottery.factorys.verify.Fc3DParser" />
+		<!-- 七乐彩content解析器 -->
+	<bean id="qlcParser" class="com.yuncai.modules.lottery.factorys.verify.QLCParser" />
+	<!-- 广东11x5 -->
+	<bean id="gd11x5Parser" class="com.yuncai.modules.lottery.factorys.verify.Gd11x5Parser" />
+	
+	<!-- 11运夺金 -->
+	<bean id="syydjlParser" class="com.yuncai.modules.lottery.factorys.verify.SyydjlParser" />
+	
+	<!-- 竞彩篮球 -->
+	<bean id="sportteryBaskbollVerfiyParser" class="com.yuncai.modules.lottery.factorys.verify.SportteryBaskbollVerfiyParser" autowire="byName" />
+	
+	<!-- 竞彩篮球混投 -->
+	<bean id="sportteryBaskbollHTParser" class="com.yuncai.modules.lottery.factorys.verify.SportteryBaskbollHTParser" autowire="byName" />
+		<!-- 世界杯解析器 -->
+	<bean id="sportteryFootballWorldCupParser" class="com.yuncai.modules.lottery.factorys.verify.SportteryFootballWorldCupParser" autowire="byName" />
+
+</beans>

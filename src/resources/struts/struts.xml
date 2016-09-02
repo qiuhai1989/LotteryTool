@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- 开启使用开发模式，详细错误提示 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 默认后缀名 -->
+    <constant name="struts.action.extension" value="php" />
+    <constant name="struts.action.excludePattern" value="/servlet/.*" />
+    <!-- 指定每次请求到达，重新加载资源文件 -->
+    <constant name="struts.i18n.reload" value="true" />
+    <!-- 视图标签默认的视图主题-->
+    <constant name="struts.ui.theme" value="simple" />
+    <!-- 国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+    <!-- locale -->
+    <constant name="struts.locale" value="zh_CN" />
+    <!-- 指定资源编码类型 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <!-- 生成URL时是否包含请求参数 -->
+    <constant name="struts.url.includeParams" value="none" />
+    <!-- 文件上传中整个请求内容允许的最大字节数 -->
+    <constant name="struts.multipart.maxSize" value="1048576000" />
+    
+    <constant name="struts.objectFactory" value="spring"/>
+    <include file="resources/struts/action.xml" />
+    <include file="resources/struts/admin.xml" />
+</struts>

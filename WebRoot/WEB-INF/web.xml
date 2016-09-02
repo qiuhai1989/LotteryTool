@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>BetTool</display-name>
+	<!-- log4j Listener -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/classes/resources/log4j/log4j.properties
+		</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			org.springframework.web.util.Log4jConfigListener
+		</listener-class>
+	</listener>
+
+	<!-- 初始化数据文件路径 监听-->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			com.yuncai.modules.lottery.listenter.InitPathListenter
+		</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:resources/spring/applicationContext.xml
+			classpath:resources/business/business.xml
+			classpath:resources/business/softwareComConfig.xml
+			classpath:resources/business/softwareFactory.xml
+			classpath:resources/business/factorys.xml
+			classpath:resources/business/xfbConfig.xml
+			classpath:resources/business/postConfig.xml
+			classpath:resources/business/emailMail.xml
+		</param-value>
+
+	</context-param>
+
+	<!-- Spring Listener -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+
+	<!-- Character Encoding Filter -->
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<!-- 强制进行转码 -->
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 页面缓存配置 -->
+
+	<filter>
+		<filter-name>CacheFilter</filter-name>
+		<filter-class>
+			com.opensymphony.oscache.web.filter.CacheFilter
+		</filter-class>
+		<init-param>
+			<param-name>time</param-name>
+			<param-value>60</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scope</param-name>
+			<param-value>application</param-value>
+		</init-param>
+	</filter>
+
+
+	<filter-mapping>
+		<filter-name>CacheFilter</filter-name>
+		<url-pattern>/interface/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 页面缓存配置end -->
+
+
+
+	<!-- servlet -->
+	<!-- 足彩对阵 -->
+	<servlet>
+		<servlet-name>ft</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.FTMatchServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ft</servlet-name>
+		<url-pattern>/interface/FTMatch</url-pattern>
+	</servlet-mapping>
+
+	<!-- 胜负彩赛事 -->
+	<servlet>
+		<servlet-name>sfc</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.SFCIsuseToJson
+		</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>sfc</servlet-name>
+		<url-pattern>/interface/jsonForS</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 篮球对阵 -->
+	<servlet>
+		<servlet-name>bk</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.BasketBallMatchServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bk</servlet-name>
+		<url-pattern>/interface/bkMatch</url-pattern>
+	</servlet-mapping>	
+	
+	
+	
+	
+	<!-- 用于绑定手机短信验证 旧 -->
+	<servlet>
+		<servlet-name>smsAuth</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.SmsAuthServletBefore5
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsAuth</servlet-name>
+		<url-pattern>/sms/smsAuth</url-pattern>
+	</servlet-mapping>
+	<!-- 用于绑定手机短信验证 新-->
+	<servlet>
+		<servlet-name>smsAuth3</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.SmsAuthServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsAuth3</servlet-name>
+		<url-pattern>/sms/smsAuth3</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<!-- 用于提款短信验证 旧-->
+	<servlet>
+		<servlet-name>smsAuth2</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.SmsAuthServletForTakeMoneyBefore5
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsAuth2</servlet-name>
+		<url-pattern>/sms/smsAuth2</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 用于提款短信验证 新-->
+	<servlet>
+		<servlet-name>smsAuth4</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.SmsAuthServletForTakeMoney
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsAuth4</servlet-name>
+		<url-pattern>/sms/smsAuth4</url-pattern>
+	</servlet-mapping>	
+	
+	
+<!-- 用于找回密码 版本5 及之前 -->
+	<servlet>
+		<servlet-name>smsPassword</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.GetPasswordBySmsBefore5
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsPassword</servlet-name>
+		<url-pattern>/sms/smsPassword</url-pattern>
+	</servlet-mapping>
+
+<!-- 用于找回密码 版本5后 -->
+
+	<servlet>
+		<servlet-name>smsPassword2</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.GetPasswordBySms
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>smsPassword2</servlet-name>
+		<url-pattern>/sms/smsPassword2</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- android充值 -->
+	<servlet>
+		<servlet-name>ChargeXFBNotify</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.ChargeXFBNotify
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChargeXFBNotify</servlet-name>
+		<url-pattern>/interface/ChargeXFBNotify</url-pattern>
+	</servlet-mapping>
+
+	
+	<!-- wap充值 -->
+	<servlet>
+		<servlet-name>ChargeWAPNotify</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.ChargeWapNotify
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChargeWAPNotify</servlet-name>
+		<url-pattern>/interface/ChargeWAPNotify</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EasyLottery</servlet-name>
+		<servlet-class>
+			com.yuncai.modules.servlet.EasyLotteryServlet
+		</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <servlet-class>com.yuncai.modules.servlet.FileUploadServlet</servlet-class>
+  </servlet>
+
+	<servlet-mapping>
+		<servlet-name>EasyLottery</servlet-name>
+		<url-pattern>/servlet/EasyLottery</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/servlet/FileUploadServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 世界杯冠军玩法对阵数据 -->
+  <servlet>
+  	<servlet-name>worldCupChampionServlet</servlet-name>
+  	<servlet-class>com.yuncai.modules.servlet.WorldCupChampionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>worldCupChampionServlet</servlet-name>
+  	<url-pattern>/servlet/worldCupChampionServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+	<!-- openSessionInView -->
+	<filter>
+		<filter-name>openSessionInView</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInView</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!-- 延长action中属性的生命周期， 
+	<filter>
+		<filter-name>struts-cleanup</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ActionContextCleanUp
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>-->
+
+	<!-- Struts2 Filter -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				struts-default.xml,struts-plugin.xml,resources/struts/struts.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>actionPackages</param-name>
+			<param-value>com.yuncai.modules</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Welcome List -->
+	<welcome-file-list>
+		<welcome-file>index.php</welcome-file>
+		<welcome-file>index.shtml</welcome-file>
+	</welcome-file-list>
+
+
+	<error-page>
+		<error-code>401</error-code>
+		<location>/401.shtml</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/403.shtml</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.shtml</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/500.shtml</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/npe.shtml</location>
+	</error-page>
+
+</web-app>

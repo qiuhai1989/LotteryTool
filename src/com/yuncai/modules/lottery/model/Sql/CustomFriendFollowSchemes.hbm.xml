@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yuncai.modules.lottery.model.Sql.CustomFriendFollowSchemes" table="T_CustomFriendFollowSchemes">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" not-null="true"/>
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="USERID"  />
+        </property>
+        <property name="followUserId" type="java.lang.Integer">
+            <column name="FOLLOWUSERID" />
+        </property>
+        
+        <property name="lotteryId" type="java.lang.Integer">
+            <column name="LOTTERYID" />
+        </property>
+        <property name="playTypeId" type="java.lang.Integer">
+            <column name="PLAYTYPEID" />
+        </property>
+        <property name="moneyStart" type="java.lang.Double">
+            <column name="MONEYSTART" />
+        </property>
+        
+        <property name="moneyEnd" type="java.lang.Double">
+            <column name="MONEYEND" />
+        </property>
+        <property name="buyShareStart" type="java.lang.Integer">
+            <column name="BUYSHARESTART" />
+        </property>
+        <property name="buyShareEnd" type="java.lang.Integer">
+            <column name="BUYSHAREEND" />
+        </property>
+        
+        <property name="type" type="java.lang.Integer">
+            <column name="TYPE" />
+        </property>
+        
+        <property name="dateTime" type="java.util.Date">
+            <column name="DATETIME"  />
+        </property>
+     
+    </class>
+</hibernate-mapping>

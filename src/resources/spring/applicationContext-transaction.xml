@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<description>事务配置</description>
+
+	<!-- 配置事务管理 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<!--   
+			<property name="globalRollbackOnParticipationFailure" value="false" />--><!--指定此参数为false-->
+	</bean>
+
+	<bean id="baseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="get*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="select*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="query*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="getHelperMessageId">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- baseOracl -->
+	<bean id="baseService"
+		class="com.yuncai.modules.lottery.service.BaseServiceImpl"
+		abstract="true">
+		<property name="genericDao">
+			<bean
+				class="com.yuncai.modules.lottery.dao.GenericDaoImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="cluesService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.CluesServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<bean id="memberService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberWalletService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberWalletServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+
+	<bean id="memberWalletLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberWalletLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberDrawingService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberDrawingServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberDrawingLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberDrawingLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberOperLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberOperLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberScoreService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberScoreServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+
+	<bean id="memberScoreLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberScoreLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberInfoService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberInfoServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="memberChargeLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.MemberChargeLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="systemErrorService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.system.SystemErrorServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+
+	<bean id="followingPlanInfoService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.FollowingPlanInfoServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="platformService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.PlatformServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<!-- 平台管理-彩种管理 -->
+	<bean id="isusesMangeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.IsusesMangeServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<bean id="channelService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.ChannelServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="giftManageService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.GiftManageServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="giftDatailLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.GiftDatailLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<!-- 客服端apk管理补充 -->
+	<bean id="apkManageSupplementService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.apk.ApkManageSupplementServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<!-- 投注 -->
+
+	<bean id="lotteryPlanService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.lottery.LotteryPlanServiceImpl"
+				autowire="byName" parent="baseService">
+				<property name="bingoCheckMap">
+					<map>
+						<entry key="39"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.DltBingoCheck" />
+						<entry key="63"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.P3BingoCheck" />
+						<entry key="3"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.QxcBingoCheck" />
+						<entry key="64"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.P5BingoCheck" />
+						<entry key="74"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.FbSfc14BingoCheck" />
+						<entry key="75"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.FbSfc9BingoCheck" />
+						<entry key="2"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.FbJq4BingoCheck" />
+						<entry key="15"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.FbBqcBingoCheck" />
+						<entry key="7207"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.SportteryFootballBinggoCheck" />
+						<entry key="7201"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.SportteryFootballBinggoCheck" />
+						<entry key="7202"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.SportteryFootballBinggoCheck" />
+						<entry key="7203"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.SportteryFootballBinggoCheck" />
+						<entry key="7204"
+							value="com.yuncai.modules.lottery.factorys.checkBingo.SportteryFootballBinggoCheck" />
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="lotteryPlanOrderService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.lottery.LotteryPlanOrderServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="tradeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.lottery.TradeServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<!-- 票 -->
+	<bean id="ticketService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.ticket.TicketServiceImpl"
+				autowire="byName" parent="baseService" >
+				<property name="ticketbingoCheckMap">
+					<map>
+						<entry key="7201"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheck1" />
+						<entry key="7202"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheck1" />
+						<entry key="7203"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheck1" />
+						<entry key="7204"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheck1" />
+						<entry key="7207"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheck1" />
+						<entry key="7206"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.SportteryFootballBinggoCheckTurbid" />
+						<entry key="7301"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.BasketBallBingoCheck" />
+						<entry key="7302"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.BasketBallBingoCheck" />
+						<entry key="7303"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.BasketBallBingoCheck" />
+						<entry key="7304"
+							value="com.yuncai.modules.lottery.factorys.ticketBingo.BasketBallBingoCheck" />
+						<entry key="7305"
+						    value="com.yuncai.modules.lottery.factorys.ticketBingo.BasketBallBingoCheckHT" />
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 抓取数据 -->
+
+	<bean id="ftMatchService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtMatchServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="ftSpfAwardService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtSpfAwardServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="ftBfAwardService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtBfAwardServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="ftBqcAwardService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtBqcAwardServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<bean id="cardService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.card.CardServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+	<!-- 发送邮件配置 -->
+	<bean id="emailInfoService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.EmailInfoServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+<!-- 发送邮件配置 类型管理-->
+	<bean id="emailNoticeTypeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.EmailNoticeTypeServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<bean id="vipGiftDetailService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.VipGiftDetailServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="vipBonusLineService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.VipBonusLineServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="accountRelationService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.AccountRelationServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+
+    <!-- 篮球sp -->
+	<bean id="bkSpRateService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.BkSpRateServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<bean id="ftMatchCommentService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.weixin.FtMatchCommentServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<bean id="ftImsJcService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtImsJcServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>		
+	<bean id="accountTraceService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.AccountTraceServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	<bean id="pagesInfoService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.PagesInfoServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<!-- 竞彩篮球 -->
+	<bean id="bkMatchService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.baskboll.BkMatchServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>
+	
+	<!-- 竞彩篮球 -->
+	<bean id="ftNearRecordService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtNearRecordServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<!-- 根据给定参数 获取相应响应信息 通用接口 -->
+		<bean id="commonService" class="com.yuncai.modules.lottery.service.commonService.CommonServiceImpl" autowire="byName" />
+
+	<!-- 竞彩篮球,大小球,亚盘 -->
+	<bean id="bkMatchBet365Service" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.bkmatch.BkMatchBet365ServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>		
+	<!-- 竞彩篮球投注比例 -->
+	<bean id="bkBetRateRatioService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.bkmatch.BkBetRateRatioServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<!-- 竞彩篮球排名 -->
+	<bean id="bkImsMatch500Service" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.bkmatch.BkImsMatch500ServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<!-- 轻松购彩类型 -->
+	<bean id="easyLotteryTypeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.easy.EasyLotteryTypeServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<!-- 轻松购彩-->
+	<bean id="easyLotteryRecommendService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.easy.EasyLotteryRecommendServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	<!-- 胜负彩对阵-->
+	<bean id="ftImsSfcService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtImsSfcServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>			
+	<!-- 世界杯对阵-->
+	<bean id="worldCupTeamService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.oracleService.Impl.worldcup.WorldCupTeamServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>		
+			<!-- 世界杯 借用小易代码用于解析验证方案格式-->
+	<bean id="ftChampionService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.fbmatch.FtChampionServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+	
+				<!-- 用户分享记录-->
+	<bean id="userShareRecordService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.UserShareRecordServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>	
+			
+	<!-- 客户端活动模块 -->
+	<bean id="ammService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.yuncai.modules.lottery.service.oracleService.Impl.member.ActivitiesManagementModuleServiceImpl"
+				autowire="byName" parent="baseService" />
+		</property>
+	</bean>					
+</beans>

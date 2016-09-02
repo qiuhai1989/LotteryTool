@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>持久化配置</description>
+
+
+	<!-- SessionFactory -->
+	<bean id="sqlSessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="lobHandler" ref="lobHandler" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${sql.dialect}</prop>
+				<prop key="hibernate.show_sql">${sql.show_sql}</prop>
+				<prop key="hibernate.jdbc.fetch_size">
+					${sql.jdbc.fetch_size}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">
+					${sql.jdbc.batch_size}
+				</prop>
+				<prop key="hibernate.connection.release_mode">
+					${sql.connection.release_mode}
+				</prop>
+				<prop key="hibernate.proxool.xml">
+					resources/hibernate/sql_proxool.xml
+				</prop>
+				<prop key="hibernate.proxool.pool_alias">
+					DBSQLPool
+				</prop>
+				<!--  -->
+				<prop key="hibernate.connection.provider_class">
+					org.hibernate.connection.ProxoolConnectionProvider
+				</prop>
+
+			</props>
+		</property>
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<!-- 使用模糊配置，若模糊路径超过1层可使用**代替* -->
+				<value>classpath:com/yuncai/modules/*/model/Sql</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- apk -->
+	<bean id="apkNoticeDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.apk.ApkNoticeDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="apkPushDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.apk.ApkPushDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="apkPackageDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.apk.ApkPackageDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="apkManageDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.apk.ApkManageDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="apkPicDAO" class="com.yuncai.modules.lottery.dao.sqlDao.impl.apk.ApkPicDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+	<!-- user -->
+	<bean id="sqlUsersDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.UsersDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlCustomFriendFollowSchemesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.CustomFriendFollowSchemesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlSitesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.SitesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlPlatformDAO" class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.PlatformDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="sqlChannelDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.ChannelDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- 投注 -->
+	<bean id="sqlBuyDetailesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.buyDetailesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlIsusesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.IsusesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlSchemesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.SchemesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+
+	<bean id="sqlChaseTaskDetailsDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.ChaseTaskDetailsDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlChaseTasksDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.ChaseTasksDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlLotteryTypePropsDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.LotteryTypePropsDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="sqlSchemesNumberDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.SchemesNumberDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+	<bean id="sqlSmsDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.SmsDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- 抓取数据 -->
+	<bean id="matchDao"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.fbmatch.MatchDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="passRateDao"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.fbmatch.PassRateDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="singleRateDao"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.fbmatch.SingleRateDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="schemesDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.SchemesDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="userBankBindDetailsDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.UserBankBindDetailsDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="phoneErrorDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.lottery.PhoneErrorDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+
+	<bean id="sPYaPanDao"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.fbmatch.SPYaPanDaoImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<bean id="bankDetailDAO"
+		class="com.yuncai.modules.lottery.dao.sqlDao.impl.user.BankDetailDAOImpl">
+		<property name="sessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+</beans>

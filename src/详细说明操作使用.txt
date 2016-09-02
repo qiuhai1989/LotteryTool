@@ -1,0 +1,84 @@
+本站点配置了两个数据库的连接demo数据库mysql、sql2008
+mysql =oracle文件包
+1)配置数据库连接
+mysql：resources/hibernate/proxool.xml、resources/hibernate/hibernate.properties
+
+sql2008：resources/hibernate/sql_proxool.xml、resources/hibernate/sql_hibernate.properties
+2)配置事务、持久层
+mysql：applicationContext-persistence.xml、applicationContext-transaction.xml
+
+sql2008：applicationContext-sqlpersistence.xml、applicationContext-sqltransaction.xml
+
+下面是具体的一个实例
+1。构架结构为ssh，俗称的struts2、hibernate、spring
+2。注意事项
+	a)配置数据库
+		路径：resources/hibernate/proxool.xml (这个封装是连接池)｜resources/hibernate/hibernate.properties 基本设置
+	b)spring中持久层、事务层配置
+		1.持久层：resources/spring/applicationContext-persistence.xml
+		持久层里面配置了连接池
+		注意：注意的地方就是hbm.xml在持久层里面的映射问题，我在这里配置了一个通用的。
+		例如：
+		<property name="mappingDirectoryLocations">
+			<list>
+				<!-- 使用模糊配置，若模糊路径超过1层可使用**代替* -->
+				<value>classpath:com/yuncai/modules/*/model/Oracl</value> 只要在这个路径下所以的hbm.xml这样配置是通用的，省略了许多代码
+			</list>
+		</property>
+		2.事务层配置：resources/spring/applicationContext-transaction.xml
+		处理了一个通用的baseService只要以后其它子类继承这个baseService就可以。因为baseService有许多的通用方法，
+		也就是baseService对任何Service都可以用的。
+		例如：
+		<bean id="baseService" class="com.yuncai.modules.lottery.service.BaseServiceImpl" abstract="true">
+			<property name="genericDao" >
+				<bean class="com.yuncai.modules.lottery.dao.GenericDaoImpl" >
+					<property name="sessionFactory" >
+					<ref bean="sessionFactory" />
+					</property>
+				</bean>
+			</property>	
+		</bean>
+	
+		<!--  demo测试-->
+		<bean id="testService" parent="baseTransactionProxy">
+			<property name="target">
+				<bean class="com.yuncai.modules.lottery.service.test.TestServiceImple"
+					autowire="byName" parent="baseService" />
+			</property>
+		</bean>
+		3.applicationContext.xml注入action类
+			注意：这个地方我用了一个通用的方法就是
+			<!-- 使用 annotation 自动注册bean,并检查@Controller注解已被注入 --> 
+			<context:component-scan base-package="com.yuncai.modules" />
+			所以省略许多代码配置，可能你们会想这样配置会依赖注入吗，技巧就在这里。
+			在action里面引用了
+			@Controller("testNameAction")
+			@Scope("prototype")
+			public class testMemberAction extends BaseAction{
+				//引用@resource直接就是依赖注入（只限于action）
+				@Resource
+				private TestService testService;
+				private List<testBean> listUser;
+				public String index(){
+					listUser=this.testService.findList();
+					return "list";
+				}
+				
+				public List<testBean> getListUser() {
+					return listUser;
+				}
+				public void setListUser(List<testBean> listUser) {
+					this.listUser = listUser;
+				}
+			
+			}
+			
+			其中:@Controller("testNameAction")注入struts的bean的名称、@Scope("prototype")注入线程、@Resource这个是每个service上面调用
+			这个因为他是依赖注入的，以后所有的Action类都可以这样写。
+			
+			4.注意建文件侠注的问题com.yuncai.modules专属监控的，这个里面只放action,dao,service,model
+			其它东西都可以入在com.yuncai.core、com.yuncai下面
+			
+		测试测试svn
+		
+		

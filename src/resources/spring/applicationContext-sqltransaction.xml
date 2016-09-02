@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<description>事务配置</description>
+		<!-- 配置事务管理 -->
+	<bean id="transactionSQLManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sqlSessionFactory" />
+		<!--  
+		<property name="globalRollbackOnParticipationFailure" value="false" />--> <!--指定此参数为false-->
+	</bean>
+
+	<bean id="baseTransactionSQLProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager">
+			<ref bean="transactionSQLManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="get*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="select*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="query*">PROPAGATION_SUPPORTS,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="getHelperMessageId">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+	
+
+	<!-- basesql -->
+	<bean id="baseSQLService" class="com.yuncai.modules.lottery.service.BaseServiceImpl" abstract="true">
+		<property name="genericDao" >
+			<bean class="com.yuncai.modules.lottery.dao.GenericDaoImpl" >
+				<property name="sessionFactory" >
+				<ref bean="sqlSessionFactory" />
+				</property>
+			</bean>
+		</property>	
+	</bean>
+	
+	<!-- apk -->
+	<bean id="sqlApkNoticeService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.apk.ApkNoticeServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="sqlApkPushService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.apk.ApkPushServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="sqlApkPackageService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.apk.ApkPackageServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="sqlApkManageService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.apk.ApkManageServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="apkPicService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.apk.ApkPicServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<!--user  -->
+	<bean id="sqlCustomFriendFollowSchemesService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.CustomFriendFollowSchemesServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	
+	<bean id="sqlUsersService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.UsersServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlSitesService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.SitesServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlPlatformService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.PlatformServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlchannelService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.ChannelServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<!-- 投注 -->
+	
+	<bean id="sqlbuyDetailesService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.buyDetailesServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlIsusesService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.IsusesServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlSchemesService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.SchemesServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlBusinessService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.BusinessServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="sqlChaseTasksService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.ChaseTasksServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlChaseTaskDetailsService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.ChaseTaskDetailsServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlLotteryTypePropsService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.LotteryTypePropsServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlSchemesNumberService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.lottery.SchemesNumberServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sqlSmsService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.SmsServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<!-- 抓取数据 -->
+	<bean id="matchService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.fbmatch.MatchServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="passRateService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.fbmatch.PassRateServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="singleRateService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.fbmatch.SingleRateServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	<bean id="userBankBindDetailsService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.UserBankBindDetailsServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>	
+	
+	<bean id="isuseForSFCService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.fbmatch.IsuseForSFCServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>	
+	<bean id="sqlUserProposeService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.UserProposeServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>			
+	<bean id="phoneErrorService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.PhoneErrorServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>
+	
+	<bean id="sYaPanService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.fbmatch.SPYaPanServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>	
+	<bean id="bankDetailService" parent="baseTransactionSQLProxy">
+		<property name="target">
+			<bean class="com.yuncai.modules.lottery.service.sqlService.impl.user.BankDetailServiceImpl"
+				autowire="byName" parent="baseSQLService" />
+		</property>
+	</bean>		
+			
+</beans>

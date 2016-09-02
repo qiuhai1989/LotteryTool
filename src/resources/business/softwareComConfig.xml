@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+  <!-- 通用合作方软件购彩 -->
+   <bean id="softwareConfigFactory" class="com.yuncai.modules.lottery.software.service.CommonConfigFactory" >
+      <property name="commonConfigMap">
+        <map>
+          <entry key="yc6636" value-ref="yc6636Cfg"></entry>
+          <entry key="ycAndroid" value-ref="ycAndroidCfg"></entry>
+          <entry key="ycIos" value-ref="ycIosCfg"></entry>
+           <entry key="offlineAndroid" value-ref="offlineAndroidCfg"></entry>
+          <!-- 专测试 -->
+          <entry key="test" value-ref="newTestCfg"></entry>
+          <!-- 专用bug -->
+           <entry key="yctest" value-ref="testCfg"></entry>
+        </map>
+      </property>
+   </bean>
+   <bean id="yc6636Cfg" class="com.yuncai.modules.lottery.software.service.CommonConfig">
+       <property name="agentId"><value>yc6636</value></property>
+       <property name="key"><value>201305a7ffc826736</value></property>
+   </bean>
+   
+    
+    <bean id="ycAndroidCfg" class="com.yuncai.modules.lottery.software.service.CommonConfig">
+       <property name="agentId"><value>ycAndroid</value></property>
+       <property name="key"><value>201305aycAndroid26736</value></property>
+       <property name="gentypeIn"><value>5</value></property> <!-- 手机购彩 -->
+       <property name="isVersion"><value>0</value> </property><!-- 带版本检测 -->
+   </bean>
+   
+     <bean id="ycIosCfg" class="com.yuncai.modules.lottery.software.service.CommonConfig">
+       <property name="agentId"><value>ycIos</value></property>
+       <property name="key"><value>201316aycycIos7859</value></property>
+       <property name="gentypeIn"><value>5</value></property> <!-- 手机购彩 -->
+       <property name="isVersion"><value>0</value> </property><!-- 带版本检测 -->
+   </bean>
+   
+   <!-- 线下安卓 -->
+    <bean id="offlineAndroidCfg" class="com.yuncai.modules.lottery.software.service.CommonConfig">
+       <property name="agentId"><value>offlineAndroid</value></property>
+       <property name="key"><value>20140207aofflAndroid5</value></property>
+       <property name="gentypeIn"><value>5</value></property> <!-- 手机购彩 -->
+       <property name="isVersion"><value>0</value> </property><!-- 带版本检测 -->
+   </bean>
+    
+   <!-- 专测试配置 -->
+   <bean id="newTestCfg"  class="com.yuncai.modules.lottery.software.service.CommonConfig">
+   		<property name="agentId"><value>test</value></property>
+        <property name="key"><value>201305test5682s7t6</value></property>
+   </bean>
+   <!-- 专测试配置end -->
+    <bean id="testCfg" class="com.yuncai.modules.lottery.software.service.CommonConfig">
+       <property name="agentId"><value>yctest</value></property>
+     <property name="key"><value>2013057ffe8ff2s7t6</value></property>
+   </bean>
+</beans>

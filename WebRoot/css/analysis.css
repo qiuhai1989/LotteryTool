@@ -1,0 +1,84 @@
+#headerContent,#arear,#footer{ width:1002px; margin:0 auto}
+#headerContent .headerMenu .menu ul .tip1 a{ color:#1761AB; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+#headerContent .headerMenu .menu ul .tip2 a{}
+#headerContent .headerMenu .menu ul .tip3 a{}
+#headerContent .headerMenu .menu ul .tip4 a{}
+#headerContent .headerMenu .menu ul .tip5 a{}
+#headerContent .headerMenu .menu ul .tip6 a{}
+#headerContent .headerMenu .menu ul .tip7 a{}
+#headerContent .headerMenu .menu ul .tip8 a{}
+#headerContent .headerMenu .menu ul .tip9 a{}
+
+/*内容样式开始*/
+#arear{ clear:both; padding-top:10px;}
+#arear .hot_data{ float:left; width:952px; margin-left:8px !Important; margin-top:10px; margin-left:4px; padding:15px 20px; border:1px solid #C4D8EA;background:url(../images/tubiaoHeaderBj.jpg) repeat-x left top}
+#arear .hot_dataImg{ float:left; width:220px; text-align:center;}
+#arear .hot_dataImg img{ width:120px; height:120px;}
+#arear .team_data{ float:left; width:500px;margin-top:25px; text-align:center;}
+#arear .team_data h2{margin-bottom:10px;font-weight:bold; font-size:26px; line-height:30px;color:#1761AB;}
+#arear .team_data .teamVs{ color:#ccc; font-family:Arial, Helvetica, sans-serif; font-size:30px;} 
+
+#arear .analysisMenu{ float:left; width:994px; margin-left:8px !Important; margin-left:4px; margin-top:10px; border-bottom:2px solid #0367C9}
+#arear .analysisMenu ul{}
+#arear .analysisMenu li{ float:left; display:block; width:100px; text-align:center; height:30px; font-size:14px; line-height:30px;font-weight:bold;background:url(../images/guoguanMenu.jpg) no-repeat left bottom; margin-right:10px !important; margin-right:5px;}
+#arear .analysisMenu li a{display:block; color:#666}
+#arear .analysisMenu li a:hover{ float:left; display:block; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+#arear .analysisMenu .navTip a{ float:left; display:block; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+
+#arear .analysisCont{ float:left; width:994px; margin-left:8px !Important; margin-left:4px;}
+.analyList{ float:left; width:994px; margin-top:10px;}
+.analyList h2{ float:left; width:972px; display:block;line-height:32px; height:34px;color:#1761AB; padding:0 10px;background:url(../images/analyTitle.jpg) repeat-x left bottom; border-left:1px solid #CBDBEB;border-top:1px solid #CBDBEB;border-right:1px solid #CBDBEB; font-size:14px; font-weight:bold;}
+.analyList .analyCont_box{ float:left; width:994px;border-collapse:collapse;}
+.analyList .analyCont_box td{ padding:5px;border:1px solid #DBDBDB}
+.analyList .analyCont_box th{border:1px solid #DBDBDB; line-height:30px; font-weight:normal;background:url(../images/xiyaoTtitle.jpg) repeat-x left bottom; font-weight:bold}
+.analyList .teamName{ font-weight:bold; font-size:13px;color:#1761AB;}
+
+.analyList .YazhiCont_box{ float:left; width:994px;border-collapse:collapse;border-left:1px solid #DBDBDB;border-right:1px solid #DBDBDB}
+.analyList .YazhiCont_box td{ padding:5px;border-bottom:1px solid #DBDBDB}
+.analyList .YazhiCont_box th{border:1px solid #DBDBDB; line-height:30px; font-weight:normal; background:url(../images/xiyaoTtitle.jpg) repeat-x left bottom; font-weight:bold}
+
+.analyList .analyCont_box .analyScore{ padding:0}
+.analyList .analyCont_box td .analySmall{border-collapse:collapse;}
+.analyList .analyCont_box td .analySmall td{ padding:5px;border:1px solid #DBDBDB; border-bottom:none; border-left:none;}
+.greyBack{ background-color:#F5F5F5; font-weight:bold}
+
+.analyFuture{ float:left; width:994px;}
+.analyFuture .analyFutuList{ float:left; width:497px;border-collapse:collapse; padding:0}
+.analyFuture .analyFutuList th{ background-color:#FEF4D9;border:1px solid #E7CF9F; line-height:28px; font-weight:normal; }
+.analyFuture .analyFutuList td{ padding:6px;border:1px solid #E7CF9F}
+.analyName{ background-color:#FDF7E7; font-weight:bold}
+
+.analyFuture .analyFutuListBlue{ float:left; width:497px;border-collapse:collapse;padding:0}
+.analyFuture .analyFutuListBlue th{ background-color:#D3E5FB;border:1px solid #B1D2E3; line-height:28px; font-weight:normal; }
+.analyFuture .analyFutuListBlue td{ padding:6px;border:1px solid #B1D2E3}
+.analyNameBlue{ background-color:#E6F0FA; font-weight:bold}
+.teamCopy{float:left; width:972px; padding:10px;border:1px solid #DBDBDB; border-top:none}
+
+.analyFuture .analyRecent{ float:left; width:497px;border-collapse:collapse; padding:0}
+.analyFuture .analyRecent th{ background-color:#FEF4D9;border:1px solid #E7CF9F; line-height:28px; font-weight:normal; }
+.analyFuture .analyRecent td{ padding:6px 0;border:1px solid #E7CF9F}
+.analyFuture .analyRecentBlue{ float:left; width:497px;border-collapse:collapse;padding:0}
+.analyFuture .analyRecentBlue th{ background-color:#D3E5FB;border:1px solid #B1D2E3; line-height:28px; font-weight:normal; }
+.analyFuture .analyRecentBlue td{ padding:6px 0;border:1px solid #B1D2E3}
+
+.analyDown{ height:18px; margin-bottom:0; border:1px solid #CCC; width:40px;}
+.red{ color:#FF3300; font-weight:normal}
+.redBold{ color:#FF3300; font-weight:bold;}
+.blue{color:#1761AB}
+.blueBold{font-weight:bold; color:#1761AB}
+.green{ color:#00B050}
+.grayBack{ background-color:#F9F9F9}
+.yellowBack{ background-color:#FFFAD6}
+.earlyBack{ background-color:#FFFAD6; border:1px solid #DBDBDB; height:16px; line-height:14px; padding:0 14px;}
+.whiteBack{background-color:#EDF7FF; border:1px solid #DBDBDB; height:16px; line-height:14px; padding:0 14px;}
+	
+.Orange{ background-color:#660000; color:#FFF}
+
+.zp_bgcolor{background-color: #FFFAD6;}
+	.jsp_bgcolor{background-color: #EDF7FF;}
+	.scoreBorads{ float:left; width:994px; margin-top:2px; border-bottom:2px solid #0367C9}
+	.scoreBorads li{ float:left; display:block; width:100px; text-align:center; height:30px; font-size:12px; line-height:30px;font-weight:bold;background:url(../images/guoguanMenu.jpg) no-repeat left bottom; margin-right:10px !important; margin-right:5px;}
+ 	.scoreBorads li a{display:block; color:#666}
+	.scoreBorads li a:hover{ float:left; display:block; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+	.scoreBorads .navTip a{ float:left; display:block; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+/*内容样式结束*

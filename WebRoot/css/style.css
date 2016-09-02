@@ -1,0 +1,94 @@
+/*全局样式开始*/
+*{ margin:0; padding:0;}
+body{margin:0;padding:0;font-size:12px;line-height:22px; color:#333;}
+div,p,li{font-family:Verdana, "宋体";font-size:12px;}
+form,ul,li,dl,dd,dt,input,h1,h2,h3,p,h4,h5,h6{margin:0;padding:0;}
+input,select{font-size:12px;line-height:16px;}
+img{border:0; vertical-align:top;}
+ul,li,ol{list-style-type:none;}
+a{color:#4f534f;text-decoration:none;}
+a:hover{color:#1761AB; text-decoration:none;}
+input{color:#333;vertical-align:middle;margin-bottom:5px;font-family: "宋体";line-height:16px;}
+.none{ display:none}
+#header,#arear,#footer{ width:1002px; margin:0 auto}
+/*全局样式结束*/
+
+/*顶部样式开始*/
+#headerWapper{height:159px;background:url(../images/headerBg.jpg) repeat-x left top; width:100%;}
+#header{ clear:both}
+#header .headerSub{ float:right; width:1000px; height:27px; line-height:23px;color:#737373}
+#header .headerSub a{ color:#0060AF}
+#header .headerSub a:hover{ color:#FF3300; text-decoration:underline}
+#header .headerSub .subMenu{ float:right; display:block}
+#header .headerSub .subMenu a{ color:#737373}
+#header .headerSub .subMenu a:hover{ color:#FF3300; text-decoration:underline}
+
+#header .headerTop{ float:left; width:1000px; height:92px; background:url(../images/headerTop.jpg) no-repeat left top; }
+#header .headerTop .logo{ float:left;margin-top:15px; padding-left:20px; width:300px;}
+#header .headerTop .service{ float:right; margin-top:35px;width:350px; text-align:right}
+#header .headerMenu{ float:left; width:1002px; height:40px;}
+#header .headerMenu .types{ float:left; width:195px;background:url(../images/types.jpg) no-repeat left top; line-height:40px; padding-left:45px; font-weight:bold; font-size:16px; color:#FFF;position:relative;}
+#header .headerMenu .types .arrow{ float:right; display:block; margin-top:10px; margin-right:14px !important; margin-right:7px;}
+
+#header .headerMenu .types .typesCont{ float:left;width:223px;background-color:#F8FCFF;border:1px solid #3184D2;border-top:none;z-index:1020;line-height:22px;font-weight:normal;position:absolute;overflow:hidden;left:8px; top:40px; }
+#header .headerMenu .types .typesCont ul{ float:left; width:213px; border-bottom:1px dashed #CCC; padding:8px 5px; clear:both}
+#header .headerMenu .types .typesCont ul li{ float:left; width:71px; color:#7D7D7D; display:block;}
+#header .headerMenu .types .typesCont ul li a{ color:#1761AB}
+#header .headerMenu .types .typesCont ul li a:hover{ color:#CC0000; text-decoration:underline}
+#header .headerMenu .types .typesCont ul .typesTitle01{ float:left; width:40px; height:26px; display:block;background:url(../images/jc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#header .headerMenu .types .typesCont ul .typesTitle02{ float:left; width:40px; height:26px; display:block;background:url(../images/fc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#header .headerMenu .types .typesCont ul .typesTitle03{ float:left; width:40px; height:26px; display:block;background:url(../images/gp.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#header .headerMenu .types .typesCont ul .typesTitle04{ float:left; width:40px; height:26px; display:block;background:url(../images/zq.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#header .headerMenu .types .typesCont ul .typesTitle05{ float:left; width:40px; height:26px; display:block;background:url(../images/tc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+
+#header .headerMenu .menu{ float:left; width:756px; padding-left:4px}
+#header .headerMenu .menu ul{}
+#header .headerMenu .menu ul li{ float:left; display:block; line-height:40px; font-weight:bold; font-size:14px; text-align:center}
+#header .headerMenu .menu ul .line{ float:left; width:2px; height:40px;background:url(../images/line.jpg) no-repeat left top;}
+#header .headerMenu .menu ul li a{ color:#FFF; padding:0 4px 0 5px; display:block}
+#header .headerMenu .menu ul li a:hover{ color:#1761AB; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+#header .headerMenu .menu .mobileLottery{ float:right; margin-top:4px; width:90px; height:32px; font-weight:bold; font-size:14px;}
+#header .headerMenu .menu .mobileLottery a{ color:#0E569A; display:block; width:65px; height:32px; line-height:32px; padding-left:25px;background:url(../images/mobileLottery.gif) no-repeat left top;}
+#header .headerMenu .menu .mobileLottery a:hover{ color:#DF413F; display:block; width:65px; height:32px; line-height:32px; padding-left:25px;background:url(../images/mobileLotteryDj.gif) no-repeat left top;}
+/*顶部样式结束* /
+
+/*版权样式开始*/
+#footer{ clear:both; padding-top:10px;}
+#footer .navMenu{ float:left; width:994px; margin-left:8px !important; margin-left:4px; line-height:30px; background-color:#F1F1F1; text-align:center}
+#footer .copyFooter{ float:left; width:994px;margin-left:8px !important; margin-left:4px; text-align:center; margin-top:3px; padding-bottom:10px}
+
+#footer .copyFooterr{ float:left; width:994px;margin-left:8px !important; margin-left:4px; text-align:center; margin-top:3px; padding-bottom:10px; border-top:1px solid #F1F1F1; padding-top:10px;}
+
+#footer .copyFooter img{ margin-top:6px;}
+/*版权样式结束*/
+
+/*当前位置样式开始*/
+#arear .current{ float:left;margin-left:8px !important; margin-left:4px; width:971px; background:url(../images/current.jpg) no-repeat left top; padding-left:23px;}
+#arear .current a{color:#1F6CB7}
+#arear .current a:hover{color:#1F6CB7; text-decoration:underline}
+#arear .current .red{ color:#1F6CB7}
+
+#arear .contLeft .typesGmcpcon{float:left;width:223px;background-color:#F8FCFF;border:1px solid #B8DFF6;border-top:none;}
+#arear .contLeft .typesGmcpcon ul{ float:left; width:213px; border-bottom:1px dashed #CCC; padding:8px 5px;}
+#arear .contLeft .typesGmcpcon ul li{ float:left; width:71px; color:#7D7D7D; display:block;}
+#arear .contLeft .typesGmcpcon ul li a{ color:#1761AB}
+#arear .contLeft .typesGmcpcon ul li a:hover{ color:#FF3300; text-decoration:underline}
+#arear .contLeft .typesGmcpcon ul .typesTitle01{ float:left; width:40px; height:26px; display:block;background:url(../images/jc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesGmcpcon ul .typesTitle02{ float:left; width:40px; height:26px; display:block;background:url(../images/fc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesGmcpcon ul .typesTitle03{ float:left; width:40px; height:26px; display:block;background:url(../images/gp.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesGmcpcon ul .typesTitle04{ float:left; width:40px; height:26px; display:block;background:url(../images/zq.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesGmcpcon ul .typesTitle05{ float:left; width:40px; height:26px; display:block;background:url(../images/tc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+/*当前位置样式结束*/
+
+/*购彩大厅翻页样式开始*/
+.nextPage{ float:left;width:728px; padding-left:10px; margin-top:10px;}
+.nextPage ul{}
+.nextPage li{ float:left; display:block; margin-right:5px;}
+.nextPage li a{ display:block; padding:0 5px; border:1px solid #CCC}
+.nextPage li a:hover{ display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+.nextPage .tip a{display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+.nextPage .Record{ float:left; padding-right:10px;}
+.nextPage .Jump{ float:left; padding-left:10px;}
+.nextPage .JumpBox{ border:1px solid #CCC; width:40px; text-align:center; height:20px; line-height:20px;}
+.nextPage .Determine{ display:block; float:left; margin-left:5px;width:45px; color:#224EA5; height:22px;background:url(../images/Determine.jpg) no-repeat left top; text-align:center}
+/*购彩大厅翻页样式结束*/

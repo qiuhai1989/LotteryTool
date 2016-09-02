@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.yuncai.modules.lottery.model.Oracle.AccountRelation" table="t_account_relation">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_T_ACCOUNT_RELATION</param>
+			</generator>
+		</id>
+
+		<property name="account" type="java.lang.String">
+			<column name="ACCOUNTS" length="40" not-null="true" ></column>
+		</property>
+		<property name="parentAccount" type="java.lang.String">
+			<column name="PARENT_ACCOUNT" length="40" not-null="true" ></column>
+		</property>
+		<property name="levelId" type="java.lang.Integer">
+			<column name="LEVEL_ID"></column>
+		</property>
+		<property name="creTime" type="java.util.Date">
+			<column name="CRETIME" />
+		</property>	
+		<property name="recommender" type="java.lang.String">
+			<column name="RECOMMENDER" />
+		</property>			
+	</class>
+</hibernate-mapping>

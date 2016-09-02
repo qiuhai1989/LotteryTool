@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>持久化配置</description>
+
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true"/>
+	
+	<!-- hibernate属性配置  -->
+	<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>
+					classpath:resources/hibernate/c3p0_hibernate.properties
+				</value>
+				<value>
+					classpath:resources/hibernate/sql_hibernate.properties
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- hibernate属性配置
+		<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+		<value>classpath:resources/hibernate/hibernate.properties</value>
+		</property>
+		</bean> -->
+
+	<!-- SessionFactory proxool连接池暂不用
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">
+					${hibernate.jdbc.fetch_size}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">
+					${hibernate.jdbc.batch_size}
+				</prop>
+				<prop key="hibernate.connection.release_mode">
+					${hibernate.connection.release_mode}
+				</prop>
+				<prop key="hibernate.proxool.xml">
+					resources/hibernate/proxool.xml
+				</prop>
+				<prop key="hibernate.proxool.pool_alias">DBPool</prop>
+				<prop key="hibernate.connection.provider_class">
+					org.hibernate.connection.ProxoolConnectionProvider
+				</prop>
+				<prop key="hibernate.format_sql">true</prop>
+
+			</props>
+		</property>
+		<property name="mappingDirectoryLocations">
+			<list>
+				使用模糊配置，若模糊路径超过1层可使用**代替* 
+				<value>
+					classpath:com/yuncai/modules/*/model/Oracle
+				</value>
+			</list>
+		</property>
+	</bean>
+	-->
+	
+	<bean id= "c3p0Oracle" class ="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" >
+          <property name="driverClass" value="${hibernate.driver}" />
+          <property name="jdbcUrl" value="${hibernate.url}" />
+          <property name="user" value="${hibernate.username}" />
+          <property name="password" value="${hibernate.password}" />
+	</bean>
+	
+	<bean id="sessionFactory"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+        <property name="lobHandler" ref="lobHandler" />
+        <property name="dataSource" ref="c3p0Oracle"/>  
+        <property name="hibernateProperties">  
+            <props>  
+               <prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.format_sql">
+					false
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">
+					${hibernate.jdbc.fetch_size}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">
+					${hibernate.jdbc.batch_size}
+				</prop>
+				<prop key="hibernate.connection.release_mode">
+					${hibernate.connection.release_mode}
+				</prop>
+                <prop key="hibernate.connection.provider_class">  
+                    org.hibernate.connection.C3P0ConnectionProvider  
+                </prop>  
+                <!--连接池的最小连接数 -->  
+                <prop key="hibernate.c3p0.min_size">15</prop>  
+                <!--最大连接数 -->  
+                <prop key="hibernate.c3p0.max_size">100</prop>  
+                <!--连接超时时间 -->  
+                <prop key="hibernate.c3p0.timeout">120</prop>  
+                <!--statemnets缓存大小 -->  
+                <prop key="hibernate.c3p0.max_statements">100</prop>  
+                <!--每隔多少秒检测连接是否可正常使用 -->  
+                <prop key="hibernate.c3p0.idle_test_period">120</prop>  
+                <!--当池中的连接耗尽的时候，一次性增加的连接数量,默认为3 -->  
+                <prop key="hibernate.c3p0.acquire_increment">5</prop>  
+                <!-- 每次都验证连接是否可用 -->   
+                <prop key="hibernate.c3p0.validate">true</prop>  
+            </props>  
+        </property>  
+        <property name="mappingDirectoryLocations">
+			<list>
+				<!-- 使用模糊配置，若模糊路径超过1层可使用**代替*  -->
+				<value>
+					classpath:com/yuncai/modules/*/model/Oracle
+				</value>
+			</list>
+		</property>
+    </bean>  
+	
+	<!-- 国家 -->
+	<bean id="ipSeeker" class="com.yuncai.core.tools.ip.IpSeeker"
+		autowire="byName" />
+
+
+
+	<bean id="memberDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="cluesDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.CluesDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberWalletDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberWalletDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberDrawingDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberDrawingDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberDrawingLineDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberDrawingLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberWalletLineDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberWalletLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberOperLineDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberOperLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberScoreDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberScoreDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberScoreLineDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberScoreLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberInfoDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberInfoDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="memberChargeLineDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.MemberChargeLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="systemErrorDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.system.SystemErrorDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="followingPlanInfoDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.FollowingPlanInfoDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<bean id="giftManageDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.GiftManageDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="giftDatailLineDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.GiftDatailLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 客服端apk管理补充 -->
+	<bean id="apkManageSupplementDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.apk.ApkManageSupplementDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+
+	<!-- 投注 -->
+	<bean id="lotteryPlanDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.lottery.LotteryPlanDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="lotteryPlanOrderDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.lottery.LotteryPlanOrderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 票 -->
+	<bean id="ticketDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.ticket.TicketDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="platformDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.PlatformDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 平台管理-彩种管理 -->
+	<bean id="isusesMangeDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.IsusesMangeDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="channelDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.ChannelDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!--抓取数据-->
+	<!-- 足球对阵DAO-->
+	<bean id="ftMatchDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtMatchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="ftSpfAwardDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtSpfAwardDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="ftBfAwardDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtBfAwardDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="ftBqcAwardDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtBqcAwardDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="ftJqsAwardDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtJqsAwardDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="cardDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.card.CardDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 发送邮件配置 -->
+	<bean id="emailInfoDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.EmailInfoDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 发送邮件配置 类型管理-->
+	<bean id="emailNoticeTypeDAO" class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.EmailNoticeTypeDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--篮彩对阵数据 -->
+	<bean id="bkSpRateDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.BkSpRateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<bean id="ftImsJcDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtImsJcDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="ftMatchCommentDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.weixin.FtMatchCommentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<bean id="vipGiftDetailDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.VipGiftDetailDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="vipBonusLineDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.VipBonusLineDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="accountRelationDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.AccountRelationDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<!-- 竞彩篮球 -->
+	<bean id="bkMatchDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.baskboll.BkMatchDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 足球 主客队近期对战-->
+	<bean id="ftNearRecordDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtNearRecordDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 竞彩篮球大小球，亚盘 -->
+	<bean id="bkMatchBet365Dao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.bkmatch.BkMatchBet365DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 竞彩篮球投注比例-->
+	<bean id="bkBetRateRatioDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.bkmatch.BkBetRateRatioDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 竞彩篮球主客队排名-->
+	<bean id="bkImsMatch500Dao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.bkmatch.BkImsMatch500DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+
+	<bean id="accountTraceDAO" class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.AccountTraceDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="pagesInfoDAO" class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.PagesInfoDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<!-- 轻松购彩类型-->
+	<bean id="easyLotteryTypeDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.easy.EasyLotteryTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>		
+	<!-- 轻松购彩推荐-->
+	<bean id="easyLotteryRecommendDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.easy.EasyLotteryRecommendDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>		
+	<!-- 胜负彩对阵-->
+	<bean id="ftImsSfcDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtImsSfcDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	<!-- 世界杯对阵数据获取-->
+	<bean id="worldCupTeamDao"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.worldcup.WorldCupTeamDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+		<!-- 世界杯 借用小易代码用于解析验证方案格式 -->
+		<bean id="ftChampionDao" class="com.yuncai.modules.lottery.dao.oracleDao.impl.fbmatch.FtChampionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 客户端活动模块 -->
+	<bean id="ammDAO" class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.ActivitiesManagementModuleDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>		
+		<!-- 用户分享记录 -->
+	<bean id="userShareRecordDAO"
+		class="com.yuncai.modules.lottery.dao.oracleDao.impl.member.UserShareRecordDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>

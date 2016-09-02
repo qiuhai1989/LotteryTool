@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+
+<struts>
+	<package name="action-default" extends="struts-default" abstract="true">
+		<interceptors>
+			<interceptor name="remoteIpInterceptor" class="com.yuncai.modules.web.interceptor.RemoteIpInterceptor" />
+		</interceptors>
+		<global-results>
+			<result name="failure">/failure.jsp</result>
+		</global-results>
+	</package>
+
+	<package name="user" extends="struts-default" namespace="/member">
+		<action name="memberReg" class="memberRegAction">
+			<interceptor-ref name="completeStack" />
+		</action>
+		<!--网上充值 -->
+		<action name="paypalRecharge" class="PaypalRechargeAction">
+		<result name="index">/jsp/member/paypalRecharge2.jsp</result>
+		<result name="input" type="redirect">${forwardUrl}</result>
+		<result name="success" type="redirect">/jsp/member/paypalRecharge2.jsp</result>
+		<result name="error" >${forwardUrl}</result>
+		<result name="net6636" type="redirect">${forwardUrl}</result>
+		</action>
+		<!-- 手机充值卡充值 -->
+		<action name="phoneRecharge" class="PaypalRechargeAction">
+		<result name="success">/jsp/member/phoneRecharge.jsp</result>
+		</action>
+		<!-- 支付结果返回 -->
+		<action name="resultRecharge" class="RechargeReasultAction">
+		<result name="index">/jsp/member/rechargeResult.jsp</result>
+		<result name="net6636" type="redirect">${forwardUrl}</result>
+		</action>
+	</package>
+
+	
+	<package name="soft" extends="action-default" namespace="/software">
+		<action name="ycSoftLottery" class="ycSoftLotteryAction">
+			<interceptor-ref name="remoteIpInterceptor" />
+		</action>
+		<action name="ycSoftLotteryTest" class="ycSoftLotteryTestAction">
+			<interceptor-ref name="remoteIpInterceptor" />
+		</action>
+	</package>
+	
+
+	
+	<package name="match_package" extends="struts-default" namespace="/match">
+		<!-- 对阵赛事列表 -->
+		<action name="match" class="matchAction" method="list">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/match/match.jsp</result>
+		</action>
+		<!-- 【亚】 -->
+		<action name="ftYa" class="ftYaAction" method="list">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/match/ft_ya.jsp</result>
+		</action>
+		<!-- 【大小球】 -->
+		<action name="ftOdds" class="ftOddsAction" method="list">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/match/ft_odds.jsp</result>
+		</action>
+		<!-- 【欧】 -->
+		<action name="ftOu" class="ftOuAction" method="list">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/match/ft_ou.jsp</result>
+		</action>
+		<!-- 【析】 -->
+		<action name="ftXi" class="ftXiAction" method="list">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/match/ft_xi.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="json_package" extends="json-default" namespace="/db">
+		<!-- 足球赛事资料库-首页数据-->
+		<action name="ftDbData" class="ftDbDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-左边数据 -->
+		<action name="ftDbLeftData" class="ftDbLeftDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-赛程积分数据 -->
+		<action name="ftDbScoreData" class="ftDbScoreDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-让球盘路榜数据 -->
+		<action name="ftDbRbplData" class="ftDbRbplDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-大小球盘路榜数据 -->
+		<action name="ftDbOddplData" class="ftDbOddplDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-射手榜数据 -->
+		<action name="ftDbScorerData" class="ftDbScorerDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-球队资料 -->
+		<action name="ftDbTeamData" class="ftDbTeamDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-最常见赛果数据 -->
+		<action name="ftDbNormalData" class="ftDbNormalDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-入球总数及单双统计-->
+		<action name="ftDbSdData" class="ftDbSdDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-半全场胜负统计 -->
+		<action name="ftDbAhData" class="ftDbAhDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-上下半场入球数较多统计 -->
+		<action name="ftDbUdData" class="ftDbUdDataAction" method="json">
+			<result type="json" />
+		</action>
+		
+		<!-- 足球赛事资料库-最先入球/失球统计 -->
+		<action name="ftDbFglData" class="ftDbFglDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-入球时间分布表 -->
+		<action name="ftDbTdData" class="ftDbTdDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-波胆分布 -->
+		<action name="ftDbBdData" class="ftDbBdDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-净胜/净负球数总计 -->
+		<action name="ftDbOwData" class="ftDbOwDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-最先入球/失球赛果-->
+		<action name="ftDbFrData" class="ftDbFrDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-球队没入球没失球 -->
+		<action name="ftDbNgData" class="ftDbNgDataAction" method="json">
+			<result type="json" />
+		</action>
+		<!-- 足球赛事资料库-标准盘亚洲盘对照 -->
+		<action name="ftDbCtData" class="ftDbCtDataAction" method="json">
+			<result type="json" />
+		</action>
+	</package>
+	
+	<package name="db_package" extends="struts-default" namespace="/db">
+		<!-- 足球赛程积分 -->
+		<action name="ftDbScore" class="ftDbScoreAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_score.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-让球盘路榜 -->
+		<action name="ftDbRbpl" class="ftDbRbplAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_rbpl.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-大小球盘路榜 -->
+		<action name="ftDbOddpl" class="ftDbOddplAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_oddpl.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-射手榜-->
+		<action name="ftDbScorer" class="ftDbScorerAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_scorer.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-球队资料 -->
+		<action name="ftDbTeam" class="ftDbTeamAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_team.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-最常见赛果 -->
+		<action name="ftDbNormal" class="ftDbNormalAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_normal.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-入球总数及单双统计 -->
+		<action name="ftDbSd" class="ftDbSdAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_sd.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-半全场胜负统计 -->
+		<action name="ftDbAh" class="ftDbAhAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_ah.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-上下半场入球数较多统计 -->
+		<action name="ftDbUd" class="ftDbUdAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_ud.jsp</result>
+		</action>
+		
+		<!-- 足球赛事资料库-最先入球/失球统计-->
+		<action name="ftDbFgl" class="ftDbFglAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_fgl.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-入球时间分布表 -->
+		<action name="ftDbTd" class="ftDbTdAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_td.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-波胆分布 -->
+		<action name="ftDbBd" class="ftDbBdAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_bd.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-净胜/净负球数总计 -->
+		<action name="ftDbOw" class="ftDbOwAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_ow.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-最先入球/失球赛果 -->
+		<action name="ftDbFr" class="ftDbFrAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_fr.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-球队没入球没失球-->
+		<action name="ftDbNg" class="ftDbNgAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_ng.jsp</result>
+		</action>
+		<!-- 足球赛事资料库-标准盘亚洲盘对照 -->
+		<action name="ftDbCt" class="ftDbCtAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_ct.jsp</result>
+		</action>
+		<!-- 足球资料库-球队资料-详情 -->
+		<action name="ftDbTeamDetail" class="ftDbTeamDetailAction" method="show">
+			<interceptor-ref name="completeStack" />
+			<result name="success">/db/ft_db_team_detail.jsp</result>
+		</action>
+	</package>
+	
+</struts>

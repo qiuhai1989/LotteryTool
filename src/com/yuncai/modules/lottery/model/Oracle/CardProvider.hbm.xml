@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.yuncai.modules.lottery.model.Oracle.CardProvider"
+		table="T_CARD_PROVIDE">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">S_CARD_PROVIDE</param>
+			</generator>
+		</id>
+
+		<property name="name" type="java.lang.String">
+			<column name="name" length="50"></column>
+		</property>
+		<property name="deramk" type="java.lang.String">
+			<column name="DERAMK" length="100"></column>
+		</property>
+		<property name="createDateTime" type="java.util.Date">
+			<column name="CREATE_DATE_TIME" />
+		</property>
+		<property name="account" type="java.lang.String">
+			<column name="account" length="80"></column>
+		</property>	
+		<property name="memberId" type="java.lang.Integer">
+			<column name="MEMBER_ID" length="11"></column>
+		</property>	
+		<property name="isfd" type="java.lang.Integer">
+			<column name="ISFD" />
+		</property>	
+		<property name="fdpercent" type="java.lang.Integer">
+			<column name="FDPERCENT" length="40"></column>
+		</property>			
+	</class>
+</hibernate-mapping>

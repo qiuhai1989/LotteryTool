@@ -1,0 +1,314 @@
+/*全局样式开始*/
+*{ margin:0; padding:0;}
+body{margin:0;padding:0;font-size:12px;line-height:22px; color:#333;}
+div,p,li{font-family:Verdana, "宋体";font-size:12px;}
+form,ul,li,dl,dd,dt,input,h1,h2,h3,p,h4,h5,h6{margin:0;padding:0;}
+input,select{font-size:12px;line-height:16px;}
+img{border:0; vertical-align:top;}
+ul,li,ol{list-style-type:none;}
+a{color:#4f534f;text-decoration:none;}
+a:hover{color:#1761AB; text-decoration:none;}
+input{color:#333;vertical-align:middle;margin-bottom:5px;font-family: "宋体";line-height:16px;}
+.hidden,.none{ display:none}
+#headerContentContent,#arear,#footer{ width:1002px; margin:0 auto}
+/*全局样式结束*/
+
+/*顶部样式开始*/
+#headerWapper{height:159px;background:url(../images/headerBg.jpg) repeat-x left top; width:100%;}
+#headerContent{ clear:both}
+#headerContent .headerSub{ float:right; width:1000px; height:27px; line-height:23px;color:#737373}
+#headerContent .headerSub a{ color:#0060AF}
+#headerContent .headerSub a:hover{ color:#FF3300; text-decoration:underline}
+#headerContent .headerSub .subMenu{ float:right; display:block}
+#headerContent .headerSub .subMenu a{ color:#737373}
+#headerContent .headerSub .subMenu a:hover{ color:#FF3300; text-decoration:underline}
+#headerContent .headerTop{ float:left; width:1000px; height:92px; background:url(../images/headerTop.jpg) no-repeat left top; }
+#headerContent .headerTop .logo{ float:left;margin-top:10px; padding-left:10px; width:300px;}
+#headerContent .headerTop .service{ float:right; margin-top:35px;width:350px; text-align:right}
+
+#headerContent .headerMenu{ float:right; width:994px;height:40px;}
+#headerContent .headerMenu ul{}
+#headerContent .headerMenu ul li{ float:left; display:block; line-height:40px; font-weight:bold; font-size:14px; text-align:center}
+#headerContent .headerMenu ul .line{ float:left; width:2px; height:40px;background:url(../images/line.jpg) no-repeat left top;}
+#headerContent .headerMenu ul li a{ color:#FFF; padding:0 27px; display:block}
+#headerContent .headerMenu ul li a:hover{ color:#1761AB; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+/*顶部样式结束* /
+
+/*版权样式开始*/
+#footer{ clear:both; padding-top:10px;}
+#footer .navMenu{ float:left; width:994px; margin-left:8px !important; margin-left:4px; line-height:30px; background-color:#F1F1F1; text-align:center}
+#footer .copyFooter{ float:left; width:994px;margin-left:8px !important; margin-left:4px; text-align:center; margin-top:3px; padding-bottom:10px}
+#footer .copyFooter img{ margin-top:6px;}
+/*版权样式结束*/
+
+/*当前位置样式开始*/
+#arear .current{ float:left;margin-left:8px !important; margin-left:4px; width:971px; background:url(../images/current.jpg) no-repeat left top; padding-left:23px;}
+#arear .current a{color:#1F6CB7}
+#arear .current a:hover{color:#1F6CB7; text-decoration:underline}
+#arear .current .red{ color:#1F6CB7}
+/*当前位置样式结束*/
+#headerContent,#Database,#arear,#footer{ width:1002px; margin:0 auto}
+#headerContent .headerMenu ul .tip2 a{ color:#1761AB; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+#headerContent .headerMenu ul .tip1 a{}
+#headerContent .headerMenu ul .tip3 a{}
+#headerContent .headerMenu ul .tip4 a{}
+#headerContent .headerMenu ul .tip5 a{}
+#headerContent .headerMenu ul .tip6 a{}
+#headerContent .headerMenu ul .tip7 a{}
+#headerContent .headerMenu ul .tip8 a{}
+#headerContent .headerMenu ul .tip9 a{}
+
+/*内容样式开始*/
+
+#DatabaseWrapper{ height:35px; width:100%;background:url(../images/Database.jpg) repeat-x left top;}
+#Database{ clear:both}
+.DatabaseSort{float:left;width:994px;margin-left:8px !important;margin-left:4px; line-height:35px;color:#C5C5C5;}
+.DatabaseSort a{color:#1F5BA9;}
+.DatabaseSort a:hover{ color:#FF3300; }
+.DatabaseSort .tuTip{ background-color:#2184D4; color:#FFF; padding:2px 10px;}
+.DatabaseSort .tuTip:hover{ background-color:#2184D4; color:#FFF; padding:2px 10px;}
+
+/*足球资料样式开始*/
+#arear{ clear:both; padding-top:10px;}
+#arear .footballArear{float:left; width:994px;margin-left:8px !important; margin-left:4px;margin-top:10px;}
+#arear .footballArear .footballMenu{ float:left; width:994px; height:30px; border-bottom:2px solid #0367C9;}
+#arear .footballArear .footballMenu ul{}
+#arear .footballArear .footballMenu li{ float:left; display:block; width:100px; text-align:center; height:30px; font-size:14px; line-height:30px;font-weight:bold;background:url(../images/guoguanMenu.jpg) no-repeat left bottom; margin-right:10px !important; margin-right:5px; cursor:pointer; color:#666}
+#arear .footballArear .footballMenu li.bg{ float:left; display:block; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+#arear .footballArear .footballMenu span h4{ float:left; display:block; width:71px; height:20px; line-height:19px; text-align:center; color:#FFF; margin-right:5px; font-weight:normal; font-size:12px;background:url(../images/saishiHot.jpg) no-repeat left top;}
+#arear .footballArear .footballMenu span{ float:right; display:block; line-height:20px; margin-top:4px; margin-left:15px !important; margin-left:10px;}
+.bllCont{ float: left; width:994px;}
+.footBallCont{ float:left; width:992px;border:1px solid #E5E5E5;border-top:none; padding-bottom:15px;}
+.footBallCont ul{}
+.footBallCont li{ float:left; display:block; width:100px; text-align:center; margin-left:11px !important; margin-left:9px; margin-right:10px !important; margin-right:9px; margin-top:15px;border:1px solid #DDD;}
+.footBallCont li .footName{ float:left; width:100px; height:22px; line-height:22px; display:block;background-color:#F8F8F8; border-top:1px solid #DDD; }
+.footBallCont li .footName a{ color:#0066CC;}
+.footBallCont li .footName a:hover{ color:#0066CC; text-decoration:underline}
+.footBallCont li img{ height:100px; width:80px; padding:10px;}
+
+.match_left{ float:left; width:148px; border:1px solid #DEDEDE }
+.matchTitle{ float:left; width:128px; color:#FFF; padding:0 10px;font-size:14px; background-color:#2793DE; line-height:30px; border-bottom:1px solid #DEDEDE}
+.matchTitle a{ color:#FFF; display:block}
+.matchTitle span{ float:right; display:block; margin-top:12px;}
+.matchCountry{ float:left; width:138px; margin-left:10px !important; margin-left:5px; margin-top:5px;}
+.matchCountry a{ font-weight:bold; color:#00328F}
+.matchCountry a:hover{ color:#FF3300; text-decoration:underline}
+.matchCountry img{ vertical-align:middle; margin-right:3px;}
+
+.matchNavList{ float:left; width:148px;border-bottom:1px solid #DEDEDE}
+.matchNavList ul{}
+.matchNavList li{ float:left; display:block; line-height:28px; width:120px; padding-left:28px;}
+.matchTip a{color:#FF3300}
+.matchTip a:hover{color:#FF3300; text-decoration:underline}
+
+.match_content{ float:left; width:684px; margin-left:10px;}
+.match_InfoTitle{ float:left; width:662px; border:1px solid #CCC; padding:10px; border-bottom:none}
+.info_title_left{ float:left; width:430px; font-weight:bold; font-size:14px; line-height:26px;}
+.info_title_right{ float:right; width:230px; margin-top:4px; text-align:right}
+.match_number{float:left; width:684px;}
+.match_number .match_league{background-color:#2793DE; color:#FFF;}
+.match_number table{ border-collapse:collapse;}
+.match_number table td{ padding:0;border:1px solid #ccc}
+.match_number .select a{ display:block;background-color:#2793DE; color:#FFF;}
+.match_number .select a:hover{ display:block;background-color:#2793DE; color:#FFF;}
+.match_number a:hover{ display:block; background-color:#8BC2EB; color:#FFF}
+.match_info{ float:left; width:682px; border:1px solid #CCC; border-top:none}
+.match_info table{ border-collapse:collapse;}
+.match_info table td{ padding:5px;border:1px solid #FFF;}
+.match_info table th{ background-color:#ECECEC; line-height:26px; font-weight:normal; border:1px solid #FFF; }
+.match_info table td a{ color:#0066CC}
+.match_info table td a:hover{ color:#FF3300; text-decoration:underline}
+.match_info table td .score{ font-weight:bold; color:#FF3300}
+.match_info table td .score:hover{ font-weight:bold; color:#FF3300; text-decoration:underline}
+.match_info table .rowsGray{ background-color:#F0F5F7}
+.match_info table tr .match_infoLine{ border-top:2px solid #CCC;}
+.standingsNav{ float:left; width:672px;border:1px solid #CCC;border-top:none; padding:10px 5px;}
+.standingsNav ul{}
+.standingsNav li{ float:left; display:block; padding:3px 6px; cursor:pointer;}
+.standingsNav li.bg{ background-color:#2793DE; color:#FFF; font-weight:bold; font-size:13px;}
+.standingsNav .stanDown{ float:right; display:block; margin-top:6px;}
+.standingsCont{ float:left; width:684px;}
+.group{ color:#FEA071}/*欧冠杯小组赛资格*/
+.groupBg{ background-color:#FEA071}
+.league{ color:#A2E76F}/*欧冠杯附加*/
+.leagueBg{ background-color:#A2E76F}
+.europa{ color:#00CCFF}/*欧罗巴联赛杯资格*/
+.europaBg{ background-color:#00CCFF}
+.demote{ color:#A0A0A0}/*降级球队*/
+.demoteBg{ background-color:#A0A0A0}
+.dataBox2{ float:left; width:682px;border:1px solid #CCC;border-top:none}
+.dataBox2 h2{float:left; width:672px; display:block; font-weight:bold;font-size:14px; background-color:#ECECEC;line-height:30px;border-bottom:1px solid #CCC; padding-left:10px;}
+.dataBoxList{ float:left; width:662px; padding:10px;}
+.dataBoxList p{text-align:justify;text-indent: 2em;}
+.dataPrompt{ float:left; width:684px; text-align:center; margin-top:5px; color:#999}
+.Review{ float:left; width:682px;border:1px solid #CCC; border-top:none}
+.Review h2{float:left; width:672px; display:block; font-weight:bold;font-size:14px; background-color:#ECECEC;line-height:30px;border-bottom:1px solid #CCC; padding-left:10px;}
+.Review ul{float:left; width:682px; padding:5px 0;}
+.Review li{ float:left; display:block; width:310px;background:url(../images/newsIco.jpg) no-repeat left center; padding-left:10px; margin-left:12px !important; margin-left:6px;}
+.Review li span{ float:right; display:block; color:#727171}
+.red{ color:#FF3300}
+.blue{ color:#0066CC}
+.redBold{ color:#FF3300; font-weight:bold}
+.blueBold{ color:#0066CC; font-weight:bold}
+
+.scorersNav{ float:left; width:672px;border:1px solid #CCC;padding:10px 5px;}
+.scorersNav ul{}
+.scorersNav li{ float:left; display:block; padding:3px 8px; cursor:pointer; font-size:14px;}
+.scorersNav li.bg{ background-color:#2793DE; color:#FFF; font-weight:bold; font-size:13px;}
+.scorersNav .stanDown{ float:right; display:block; margin-top:6px;}
+
+/*比分样式开始*/
+#arear1{ width:700px; margin:0 auto}
+#arear1{ clear:both}
+.ScoreCont{ float:left; width:696px; border:2px solid #CCC;}
+.Line-up{ float:left; width:150px;border:1px solid #CCC;}
+.LineTitle{ float:left; width:150px; text-align:center; padding:5px 0; font-size:14px;font-weight:bold; background-color:#FC8C36; color:#FFF}
+.LineList{ float:left; width:150px;}
+.LineList ul{float:left; width:150px;}
+.LineList ul h2{ float:left; width:150px; font-size:12px; font-weight:bold; color:#FFF; text-align:center; padding:2px 0; background-color:#1272D1; display:block}
+.LineList li{ float:left; width:140px; display:block; padding-left:10px;}
+.lineCont{ float:left; width:392px;color:#333;}
+.lineCont .ScoreName{ font-weight:bold; font-size:14px; color:#000}
+.lineCont table{border-collapse:collapse;}
+.lineCont table td{ padding:5px;border:1px solid #CCC;}
+.lineCont table th{ background-color:#EBEBEB; padding:4px 0;border-left:1px solid #CCC; font-weight:normal}
+.ScoreTime{background-color:#F5F3F3}
+.lineCont .ballLeft{padding-right:10px;}
+.lineCont .ballRight{padding-left:10px;}
+.lineCont img{ vertical-align:middle}
+.caption{ float:left; width:696px; text-align:center; padding:10px 0;}
+.caption img{ vertical-align:middle}
+
+.statisCont{float:left; width:696px; border:2px solid #CCC; margin-top:10px;}
+.statisCont table{border-collapse:collapse;}
+.statisCont table td{ padding:5px;border:1px solid #FFF;}
+.statisCont table th{ background-color:#1272D1; line-height:30px;border:1px solid #FFF; font-weight:normal; color:#FFF}
+.statisTitle{background-color:#FC8C36; color:#FFF; font-weight:bold; line-height:30px;}
+/*比分样式结束*/
+
+/*大小盘路棒样式开始*/
+.daxiaoInfo{ float:left; width:682px; border:1px solid #CCC; border-top:none}
+.daxiaoInfo table{ border-collapse:collapse;}
+.daxiaoInfo table td{ padding:5px;border:1px solid #FFF;}
+.daxiaoInfo table th{ background-color:#ECECEC; line-height:26px; font-weight:normal; border:1px solid #FFF; }
+.daxiaoInfo table td a{ color:#0066CC}
+.daxiaoInfo table td a:hover{ color:#FF3300; text-decoration:underline}
+.daxiaoInfo table .rowsGray{ background-color:#F0F5F7}
+.daxiaoInfo h2{width:672px;font-weight:bold;font-size:14px; background-color:#ECECEC;line-height:30px;border-bottom:1px solid #CCC; padding-left:10px;}
+
+.daxiaoPage{ float:left; width:1000px; border:1px solid #ACDDFF}
+.daxiaoPage h2{width:990px;font-weight:bold;font-size:14px; background-color:#F5FAFF;line-height:30px; padding-left:10px; text-align:center}
+.daxiaoPage table{ border-collapse:collapse;}
+.daxiaoPage table td{ padding:5px;border:1px solid #FFF;}
+.daxiaoPage table th{ background-color:#ECECEC; line-height:26px; font-weight:normal; border:1px solid #FFF; }
+.daxiaoPage table td a{ color:#0066CC}
+.daxiaoPage table td a:hover{ color:#FF3300; text-decoration:underline}
+.daxiaoPage table .rowsGray{ background-color:#F0F5F7}
+.rowsGray{ background-color:#F0F5F7}
+/*大小盘路榜样式结束*/
+
+/*标准盘亚洲盘对照样式开始*/
+.duizhaoCont{ float:left; width:682px; border:1px solid #CCC;}
+.duizhaoCont table{ border-collapse:collapse;}
+.duizhaoCont table td{ padding:5px;border:1px solid #FFF;}
+.duizhaoCont table th{ background-color:#ECECEC; line-height:26px; font-weight:normal; border:1px solid #FFF; }
+.duizhaoCont table td a{ color:#0066CC}
+.duizhaoCont table td a:hover{ color:#FF3300; text-decoration:underline}
+.duizhaoCont table .rowsGray{ background-color:#F0F5F7}
+/*标准盘亚洲盘对照样式结束*/
+
+.match_right{ float:right; width:138px;border:1px solid #D6E2EB}
+.data_logo{ float:left; width:118px; padding:10px;}
+.data_logo img{ width:118px; height:130px;}
+.data_logo .dataName{ float:left; width:118px; display:block; text-align:center; margin-top:10px; line-height:20px;}
+.data_title{ float:left; width:128px; font-weight:bold; font-size:14px; background-color:#1272D1; padding-left:10px; color:#FFF; line-height:30px;}
+.data_nav{ float:left; width:138px;}
+.data_nav ul{}
+.data_nav li{ float:left; display:block; width:138px; line-height:30px;border-bottom:1px solid #D6E2EB}
+.data_nav li a{ padding-left:10px; display:block; width:128px;}
+.data_nav li a:hover{ background-color:#E3F1FE; font-weight:bold; color:#1F3B7B}
+.data_nav .select a{background-color:#E3F1FE; font-weight:bold; color:#1F3B7B}
+/*足球资料样式结束*/
+
+/*球队资料样式开始*/
+.teaminfoCont{ float:left; width:682px; border:1px solid #CCC; padding-bottom:15px;}
+.teaminfoCont ul{}
+.teaminfoCont li{ float:left; display:block; width:100px; text-align:center; margin-left:10px !important; margin-left:8px;margin-top:15px;border:1px solid #DDD;}
+.teaminfoCont li .footName{ float:left; width:100px; line-height:22px; display:block; padding-bottom:5px; }
+.teaminfoCont li .footName a{ color:#0066CC;}
+.teaminfoCont li .footName a:hover{ color:#0066CC; text-decoration:underline}
+.teaminfoCont li img{ height:100px; width:80px; padding:10px;}
+
+.teamNearMenu{ float:left; width:148px;}
+.teamNearMenu ul{}
+.teamNearMenu li{ float:left; display:block; line-height:28px; width:138px; padding-left:10px;}
+.teamNearMenu .matchTip a{color:#FF3300; font-weight:bold}
+.teamNearMenu .matchTip a:hover{color:#FF3300; text-decoration:underline}
+
+.teamMenu{ float:left; width:684px;height:30px; border-bottom:2px solid #0367C9;}
+.teamMenu ul{}
+.teamMenu li{float:left; display:block; width:100px; text-align:center; height:30px; font-size:14px; line-height:30px;font-weight:bold;background:url(../images/guoguanMenu.jpg) no-repeat left bottom; margin-right:10px !important; margin-right:5px;}
+.teamMenu li a{ display:block; color:#666}
+.teamMenu li a:hover{ display:block; color:#FFF; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+.teamMenu .teamTip a{ float:left; display:block; color:#FFF; width:100px; text-align:center; line-height:30px; color:#FFF;font-weight:bold;background:url(../images/guoguanMenuDj.jpg) no-repeat left bottom;}
+.teamMenu .teamSclass{ float:right; display:block; margin-top:5px;}
+
+.teamNearCont{ float:left; width:684px;}
+.team_infor{ float:left; width:684px; margin-bottom:10px;}
+.team_infor table{ border-collapse:collapse;}
+.team_infor table td{ padding:5px;border:1px solid #DBDBDB;}
+.team_infor table th{ background-color:#F1F1F1; line-height:26px; font-weight:normal; border:1px solid #DBDBDB; }
+.team_infor img{ width:110px; height:120px;}
+
+.team_Player{ float:left; width:684px; margin-bottom:10px;}
+.team_Player table{ border-collapse:collapse;}
+.team_Player table td{ padding:5px;border:1px solid #DBDBDB;}
+.team_Player table th{ background-color:#F1F1F1; line-height:26px; font-weight:normal; border:1px solid #DBDBDB; }
+.team_Player img{ width:130px; height:180px;}
+
+.teamOddsNav{ float:left; width:684px; height:30px; border-bottom:2px solid #2573C1}
+.teamOddsNav ul{}
+.teamOddsNav li{ float:left; display:block; width:110px; background-color:#F0F0F0; margin-right:5px; color:#808080; font-weight:bold; line-height:30px; text-align:center; font-size:14px; cursor:pointer}
+.teamOddsNav li.bg{ background-color:#2573C1; color:#FFF}
+.teamOddsCont{ float:left; width:682px;}
+.teamOddsNav li a{ display:block; color:#808080;}
+.teamOddsNav .teamNav a{background-color:#2573C1; color:#FFF; display:block}
+.teamOddsNav .teamNavList{ float:right; display:block; margin-top:5px}
+
+.teamSche{ float:left; width:682px; border:1px solid #CCC;}
+.teamSche table{ border-collapse:collapse;}
+.teamSche table td{ padding:3px 5px;border:1px solid #FFF;}
+.teamSche table th{ background-color:#ECECEC; line-height:26px; font-weight:normal; border:1px solid #FFF; }
+.teamSche table td a{ color:#0066CC}
+.teamSche table td a:hover{ color:#FF3300; text-decoration:underline}
+.teamSche table .rowsGray{ background-color:#F0F5F7}
+.teamSche h2{width:672px;font-weight:bold;font-size:14px; background-color:#ECECEC;line-height:30px;border-bottom:1px solid #CCC; padding-left:10px;}
+.teamSche table td .score{ font-weight:bold; color:#FF3300}
+.teamSche table td .score:hover{ font-weight:bold; color:#FF3300; text-decoration:underline}
+.orange{ background-color:#F90000; color:#FFF;}
+.blueness{background-color:#0000CC; color:#FFF;}
+.green{ color:#008000}
+
+.PageNext{ float:left; width:684px; margin-top:10px;}
+.PageNext ul{ }
+.PageNext li{ float:left; display:block; margin-right:5px;}
+.PageNext li a{ display:block; padding:0 5px; border:1px solid #CCC}
+.PageNext li a:hover{ display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+.PageNext .tip a{display:block; padding:0 5px; border:1px solid #1F6CB7; color:#FFF; background-color:#1F6CB7;}
+.PageNext .Record{ float:left; padding-right:10px;}
+.PageNext .Jump{ float:left; padding-left:10px;}
+.PageNext .JumpBox{ border:1px solid #CCC; width:40px; text-align:center; height:20px; line-height:20px;}
+.PageNext .Determine{ display:block; float:left; margin-left:5px;width:45px; color:#224EA5; height:22px;background:url(../images/Determine.jpg) no-repeat left top; text-align:center}
+.PageNext .Determine:hover{color:#FF3300;}
+
+.team_right{ float:right; width:138px;border:1px solid #DEDEDE; }
+.team_men{ float:left; width:118px; padding:0 10px; line-height:30px; font-weight:bold; font-size:14px; background-color:#2793DE; color:#FFF;}
+.Players{ float:left; width:138px; padding-bottom:5px;}
+.Players h2{ float:left; width:128px; padding:0 5px; display:block; height:27px; color:#00328F; margin-bottom:3px; background-color:#F4F4F4; border-top:1px solid #DEDEDE;border-bottom:1px solid #DEDEDE; font-weight:bold; font-size:12px; line-height:27px;}
+.Players ul{}
+.Players li{ float:left; width:128px; padding:0 5px; display:block; line-height:26px;}
+.Players .Jersey{ float:left; width:22px;display:block}
+
+.hide{display: none;}
+.show{display: block;}
+/*球队资料样式结束*/

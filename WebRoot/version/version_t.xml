@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<version>
+	<awardking>
+		<ver code="1.2.0" index="1">true</ver>
+	</awardking>
+	<android>
+		<ver code="1.0.0" index="1" url="http://wayin.5166.info:82/shouji/test/yuncai_default_v100_test.apk" instruction="本次更新内容...">true</ver>
+		<ver code="1.0.1" index="2" url="http://wayin.5166.info:82/shouji/test/yuncai_default_v101_test.apk" instruction="本次更新内容...">true</ver>
+	</android>
+	<iphone>
+		<ver code="1.2.0" index="1">true</ver>
+	</iphone>
+	<ipad>
+		<ver code="1.2.0" index="1">true</ver>
+	</ipad>
+</version>

@@ -1,0 +1,262 @@
+.content {
+	width: 900px;
+	margin: auto;
+}
+
+.content .leftCont {
+	width: 150px;
+	float: left;
+}
+
+.content .rightCont {
+	width: 750px;
+	float: left;
+}
+
+.content table {
+	border-collapse: collapse;
+}
+
+/*.content table tr:hover {
+	background-color:#fff1cb;
+}*/
+.grayRow {
+	background-color: #eaeaea;
+	padding-top: 10px;
+}
+
+.whiteRow {
+	background-color: #FFF;
+	padding-top: 10px;
+}
+
+.content table th {
+	background-color: #464646;
+	color: white;
+	font-family: Microsoft YaHei;
+	font-size: 18px;
+	padding: 10px 10px 10px 10px;
+}
+
+.content table .backTh {
+	background-color: #0072bc;
+	padding: 0px;
+	width: 80px;
+}
+
+.content table .backTh a {
+	color: white;
+	font-family: Microsoft YaHei;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.content table .BackBtn {
+	display: inline-block;
+	font-size: 15px;
+	padding: 10px 10px 10px 10px;
+	background-color: #0072bc;
+	color: white;
+	font-family: MicroSoft YaHei;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0px 10px 0px 10px;
+	float: left;
+}
+
+.content table td {
+	font-size: 15px;
+	padding: 5px 10px 5px 10px;
+}
+
+.content table td .red {
+	color: #AF3F3F;
+	font-weight: bold;
+}
+
+.content table td .orange {
+	color: #FF7A00;
+	font-weight: bold;
+}
+
+.content table td .green {
+	color: #007439;
+	font-weight: bold;
+}
+
+.loading {
+	position: fixed;
+	top: 100px;
+	left: 45%;
+	display: none;
+	z-index: 1001;
+}
+
+.infoPanel {
+	padding: 10px 10px 10px 10px;
+	width: 500px;
+	height: 400px;
+	position: fixed;
+	_position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -200px;
+	background-color: White;
+	border: 3px solid #f0f0f0;
+	z-index: 1001;
+	display: none;
+}
+
+.sumbitPanel {
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
+.divRemark {
+	width: 490px;
+	height: 270px;
+}
+
+.panelTitle {
+	background-color: #0072bc;
+	height: 45px;
+	color: white;
+	font-family: Microsoft YaHei;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	line-height: 45px;
+	margin: 0;
+}
+
+.tbRemark th {
+	background-color: #464646;
+	color: white;
+	font-family: Microsoft YaHei;
+	font-size: 18px;
+	padding: 10px 10px 10px 10px;
+}
+
+.tbRemark td {
+	font-size: 15px;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+
+.TxtRecord {
+	width: 500px;
+	height: 270px;
+}
+
+.status_loading {
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 800px;
+	height: 17px;
+	overflow: hidden;
+	background: url(/images/status_load.png) no-repeat 0 -24px;
+}
+
+.status_loading2 {
+	float: left;
+	display: block;
+	width: 0;
+	height: 17px;
+	background: url(/images/status_load.png) no-repeat left -2px;
+	overflow: hidden;
+}
+
+.loading_info {
+	margin: 10px auto 10px auto;
+	width: 900px;
+	text-align: center;
+}
+
+.loading_info li {
+	float: left;
+	display: block;
+	width: 140px;
+	line-height: 24px;
+}
+
+.loading_info .loading_time {
+	color: #999;
+	margin-left: 5px;
+	width: 90px;
+}
+
+.loading_info .load_cp {
+	float: left;
+	display: block;
+	width: 190px;
+}
+
+.loading_info .load_kj {
+	float: left;
+	display: block;
+	width: 260px;
+}
+
+.loading_info .load_pj {
+	float: left;
+	display: block;
+	width: 180px;
+}
+
+.status_svg {
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 800px;
+	height: 150px;
+}
+
+.circleOG {
+	cursor: pointer;
+}
+
+.circleOR {
+	cursor: pointer;
+}
+
+.circleOGR {
+	cursor: pointer;
+}
+
+.lockDiv {
+	width: 100%;
+	height: 100%;	
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	background: black;
+	_background: none;
+	filter:
+		"progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=50,finishOpacity=50";
+	opacity: 0.5;
+	z-index: 1000;
+	.
+}
+
+.infoDiv {
+	background-color: #f4f4f4;
+	height: 80px;
+	color: #464646;
+	font-family: Microsoft YaHei;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 40px;
+	margin-bottom: 5px;
+	padding-left:100px;
+}
+.red{
+	color:red;
+}
+.orange{
+	color:#ea9004;
+}

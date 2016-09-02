@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yuncai.modules.lottery.model.Sql.UserBankBindDetails" table="T_UserBankBindDetails">
+        <id name="UserID" column="UserID" type="java.lang.Integer" length="19" >
+    		<generator class="assigned" />
+		</id>
+        <property name="bankType" type="java.lang.Integer">
+            <column name="BankType" length="19" />
+        </property>
+        
+        <property name="bankName" type="java.lang.String">
+            <column name="BankName" length="50" />
+        </property>
+        
+        <property name="bankCardNumber" type="java.lang.String">
+            <column name="BankCardNumber" length="50" />
+        </property>
+ 
+         <property name="bankInCityName" type="java.lang.String">
+            <column name="BankInCityName" />
+        </property>
+        
+        <property name="bankInProvinceName" type="java.lang.String">
+            <column name="BankInProvinceName" />
+        </property>
+        
+                
+        <property name="bankUserName" type="java.lang.String">
+            <column name="BankUserName"  />
+        </property>
+        
+        <property name="bankTypeName" type="java.lang.String">
+            <column name="BankTypeName"  />
+        </property>
+        
+    </class>
+</hibernate-mapping>

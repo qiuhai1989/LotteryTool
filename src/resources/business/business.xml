@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- - Application context definition for JPetStore's business layer. - Contains 
+	bean references to the transaction manager and to the DAOs in - dataAccessContext-local/jta.xml 
+	(see web.xml's "contextConfigLocation"). -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
+	<bean id="planBusiness"  class="com.yuncai.modules.lottery.business.impl.lottery.PlanBusinessImpl" autowire="byName" />
+	<bean id="termBusiness"  class="com.yuncai.modules.lottery.business.impl.lottery.TermBusinessImpl" autowire="byName" />
+	
+	<!-- 自动跟单线程结束 -->
+	
+	<!-- 方案业务处理类 
+	
+	
+	<bean id="drawingBusiness"  class="com.cailele.lottery.business.impl.lottery.DrawingBusinessImpl" autowire="byName" />
+	-->
+	<bean id="systemErrorManager" class="com.yuncai.modules.lottery.system.SystemErrorManager" init-method="init" >
+		<property name="systemErrorService" ref="systemErrorService"/>
+	</bean>
+	
+</beans>

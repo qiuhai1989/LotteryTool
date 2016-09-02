@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+  <bean name="xfbConfig" class="com.yuncai.modules.lottery.software.service.XFBConfig">
+     <property name="channelId"><value>T004</value></property>
+     <!-- 测试 商户号: T004-->
+     <property name="returnAddress"><value>http://wayin.5166.info:82/interface/ChargeXFBNotify</value></property>
+	 
+	 <!-- 获取手续费费率地址-->
+     <property name="deductPercentAddress"><value>http://mopay.wayin.cn:8080/dopay/getCostByPayID.jsp</value></property>
+	<!-- 正式：C003 
+     <property name="returnAddress"><value>http://219.136.252.223:82/interface/ChargeXFBNotify</value></property>
+     -->
+  </bean>
+  
+  
+  <!-- 彩金卡 -->
+  
+          
+	<bean id="changeConfig" class="com.yuncai.modules.comconfig.ChangeConfig">
+		<property name="changeMap">
+	       <map>
+	     	  <entry key="CARD" value-ref="cardCfg"></entry>
+	       </map>
+       </property>
+	</bean>
+	<!-- 彩金卡支付 -->
+	<bean id="cardCfg" class="com.yuncai.modules.comconfig.ChangeConfig">
+		<property name="urlpth"><value>http://mopay.wayin.cn:8080/dopay/getJuanNumber.jsp</value> </property>
+		<property name="key"><value>8816kh5MvPQNL7Snp3266367y0tv1pewszdj9NphpN7aC10SBpN2U7gGGTwoJzJ6636</value></property>
+		<property name="returnNotity"><value>http://219.136.252.223:811/member/cardResultRecharge.php</value> </property>
+		<property name="returnPath"><value>http://cp.6636.com/Home/Room/ViewAccount6636.aspx</value> </property>
+		<property name="loginPath"><value>http://cp.6636.com/UserLogin.aspx</value></property>
+	</bean>
+	
+	<!-- web充值 -->
+	  <bean name="webConfig" class="com.yuncai.modules.lottery.software.service.XFBConfig">
+     <property name="channelId"><value>6636kh5MvPQNL7Snp3266367y0tv1pewszdj9NphpN7aC10SBpN2U7gGGTwoJzJ</value></property>
+     <!-- 测试-->
+     <property name="returnAddress"><value>http://wayin.5166.info:8085/interface/ChargeWAPNotify</value></property>
+	 
+	<!-- 正式
+     <property name="returnAddress"><value>http://219.136.252.223:82/interface/ChargeWAPNotify</value></property>
+      -->
+  </bean>
+
+</beans>

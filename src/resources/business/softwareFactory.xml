@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 通用软件购彩通知 -->
+	<bean id="softwareProcessManager"
+		class="com.yuncai.modules.lottery.software.service.ProcessSoftware">
+		<property name="processMap">
+			<map>
+				<entry key="1001" value-ref="loginNotify"></entry>
+				<entry key="1002" value-ref="softeLotteryNotify"></entry>
+				<entry key="1004" value-ref="memberRegNotify"></entry>
+				<entry key="1010" value-ref="balanceSearchNotify"></entry>
+				<entry key="1005" value-ref="memberUpdateNotify"></entry>
+				<entry key="1007" value-ref="lotteryPlanJoinNotify"></entry>
+				<entry key="1008" value-ref="memberPasswordNotify"></entry>
+				<entry key="1011" value-ref="logoutNotify"></entry>
+				<entry key="1012" value-ref="accountTraceNotify"></entry>
+				<entry key="2002" value-ref="memberInfoNotify"></entry>
+				<entry key="2003" value-ref="memberInfoUpdateNotify"></entry>
+				<entry key="2004" value-ref="memberInfoNotity"></entry>
+				<entry key="2005" value-ref="memberWalletNotify"></entry>
+				<entry key="2007" value-ref="memberScoreNotify"></entry>
+				<entry key="2011" value-ref="memberDrawingNotify"></entry>
+				<entry key="2012"
+					value-ref="updateMemberDrawingNotify">
+				</entry>
+				<entry key="3001" value-ref="ytdbNotify"></entry>
+				<entry key="3002" value-ref="updateResultPrizeNotify"></entry>
+				<entry key="3003" value-ref="zhNotify"></entry>
+				<entry key="3004" value-ref="checkLoginNotify"></entry>
+				<entry key="3005" value-ref="checkBingoNotify"></entry>
+				<entry key="3006" value-ref="handCancelNotify"></entry>
+				<entry key="3007" value-ref="transactionFlowNotify"></entry>
+				<entry key="3008" value-ref="heMaiListNotify"></entry>
+				<entry key="3009" value-ref="planDetailNotify"></entry>
+				<entry key="3010" value-ref="previousIssueNotify"></entry>
+				<entry key="4001" value-ref="prizeHistoryNotify"></entry>
+				<entry key="4002" value-ref="lunarCalendarNotify"></entry>
+				<entry key="4003" value-ref="lotteryMaxWinNotity"></entry>
+				<entry key="4005" value-ref="currentIsusesNotify"></entry>
+				<entry key="4006"
+					value-ref="afterCurrentTermListNotify">
+				</entry>
+				<entry key="4007" value-ref="prizeInfoNotify"></entry>
+				<entry key="1111" value-ref="versionNotify"></entry>
+				<entry key="4007" value-ref="memberScoreQueryNotify"></entry>
+				<entry key="4008" value-ref="memberWalletLineNotify"></entry>
+				<entry key="5001" value-ref="chargeLineNotify"></entry>
+				<entry key="4009" value-ref="chaseTaskNotify"></entry>
+				<entry key="4010" value-ref="chaseTaskDetailNotify"></entry>
+				<entry key="4011"
+					value-ref="transactionPlanDetailNotify">
+				</entry>
+				<entry key="4012" value-ref="userProposeNotify"></entry>
+
+				<entry key="4015"
+					value-ref="getPasswordByEmailNotify">
+				</entry>
+				<entry key="4016" value-ref="modifyPasswordNotify"></entry>
+				<!-- 点击查看出票列表 -->
+				<entry key="4017"
+					value-ref="transactionPlanDetailNotifySP">
+				</entry>
+				<entry key="4018" value-ref="introduceOwerSelf"></entry>
+				<entry key="4019" value-ref="phoneErrorNotify"></entry>
+				<entry key="4020" value-ref="drawindValidNotify"></entry>
+				<entry key="4021" value-ref="bankDetailNotify"></entry>
+				<entry key="4022" value-ref="userShareRecordNotify"></entry>
+
+				<entry key="5002" value-ref="cardMenuNotify"></entry>
+				<entry key="5003" value-ref="cardListNotify"></entry>
+				<entry key="5004" value-ref="cardRechargeNotify"></entry>
+				<entry key="5005" value-ref="cardGiftNotify"></entry>
+				<entry key="5008" value-ref="giftListNotify"></entry>
+				<entry key="5009" value-ref="vipGiftNotify"></entry>
+				<entry key="5010" value-ref="vipGiftListNotify"></entry>
+				<entry key="5011" value-ref="vipBonusLineNotify"></entry>
+				<entry key="5012" value-ref="applyForVipNotify"></entry>
+				<!-- 前端提示语管理 -->
+				<entry key="7001" value-ref="cluesNotify"></entry>
+				<entry key="7002" value-ref="apkPicNotify"></entry>
+				<entry key="7003" value-ref="isusesMangeNotify"></entry>
+				<entry key="7004" value-ref="apkNoticeNotify"></entry>
+				<entry key="7005" value-ref="apkPushNotify"></entry>
+				<!-- 活动模块管理 -->
+				<entry key="7007"
+					value-ref="activitiesManagementModuleNotify">
+				</entry>
+
+				<!-- wap充值客户端 -->
+				<entry key="8001" value-ref="chargelineCommonNotify"></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 登录通知 -->
+	<bean id="loginNotify"
+		class="com.yuncai.modules.lottery.software.lottery.LoginNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 登出通知 -->
+	<bean id="logoutNotify"
+		class="com.yuncai.modules.lottery.software.lottery.LogoutNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 投注通知 -->
+	<bean id="softeLotteryNotify"
+		class="com.yuncai.modules.lottery.software.lottery.SofteLotteryNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 注册通知 -->
+	<bean id="memberRegNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberRegNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 修改密码通知 -->
+	<bean id="memberPasswordNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberPasswordNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 参与合买通知 -->
+	<bean id="lotteryPlanJoinNotify"
+		class="com.yuncai.modules.lottery.software.lottery.LotteryPlanJoinNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 更新用户资料通知 -->
+	<bean id="memberUpdateNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberUpdateNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 绑定银行通知 -->
+	<bean id="memberInfoNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberInfoNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 修改绑定银行通知 -->
+	<bean id="memberInfoUpdateNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberInfoUpdateNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 修改钱包通知 -->
+	<bean id="memberWalletNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 修改积分通知 -->
+	<bean id="memberScoreNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberScoreNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 修改提款记录通知 -->
+	<bean id="memberDrawingNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberDrawingNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 批量修改钱包与提款记录通知 -->
+	<bean id="updateMemberDrawingNotify"
+		class="com.yuncai.modules.lottery.software.lottery.UpdateMemberDrawingNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 预投上传方案 -->
+	<bean id="ytdbNotify"
+		class="com.yuncai.modules.lottery.software.lottery.YtbdNotify"
+		autowire="byName" scope="prototype" />
+
+	<!-- 查询金额 -->
+	<bean id="balanceSearchNotify"
+		class="com.yuncai.modules.lottery.software.lottery.BalanceSearchNotify"
+		autowire="byName" scope="prototype" />
+
+
+	<!-- 派奖 -->
+	<bean id="updateResultPrizeNotify"
+		class="com.yuncai.modules.lottery.software.lottery.UpdateResultPrizeNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 追号投注 -->
+	<bean id="zhNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ZHNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 检测登录 -->
+	<bean id="checkLoginNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CheckLoginNotify"
+		autowire="byName" scope="prototype" />
+
+	<!-- 开奖 -->
+	<bean id="checkBingoNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CheckBingoNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 手工撤单 -->
+	<bean id="handCancelNotify"
+		class="com.yuncai.modules.lottery.software.lottery.HandCancelNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 超类Notify -->
+	<bean id="supNotify"
+		class="com.yuncai.modules.lottery.software.lottery.SupNotify"
+		autowire="byName" scope="prototype" abstract="true"/>
+
+
+	<!-- 合买大厅在售信息 -->
+	<bean id="heMaiListNotify"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify"
+		autowire="byName" scope="prototype" parent="supNotify">
+		<property name="map">
+			<map>
+				<entry key="7" value-ref="heMaiListNotify_7"></entry>
+				<entry key="8" value-ref="heMaiListNotify_8"></entry>
+				<entry key="9" value-ref="heMaiListNotify_9"></entry>
+				<entry key="10" value-ref="heMaiListNotify_10"></entry>
+				<entry key="11" value-ref="heMaiListNotify_11"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="heMaiListNotify_7"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify_before_7"
+		autowire="byName" scope="prototype" />
+	<bean id="heMaiListNotify_8"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify_8"
+		autowire="byName" scope="prototype" />
+	<bean id="heMaiListNotify_9"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify_9"
+		autowire="byName" scope="prototype" />
+	<bean id="heMaiListNotify_10"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify_10"
+		autowire="byName" scope="prototype" />
+	<bean id="heMaiListNotify_11"
+		class="com.yuncai.modules.lottery.software.lottery.HeMaiListNotify_11"
+		autowire="byName" scope="prototype" />		
+	<!-- 交易流水查询信息 -->
+	<bean id="transactionFlowNotify"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionFlowNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--合买方案详情信息 -->
+	<bean id="planDetailNotify"
+		class="com.yuncai.modules.lottery.software.lottery.PlanDetailNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--获取前十期彩期信息 -->
+	<bean id="previousIssueNotify"
+		class="com.yuncai.modules.lottery.software.lottery.PreviousIssueNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--开奖历史查询 -->
+	<bean id="prizeHistoryNotify"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify"
+		autowire="byName" scope="prototype">
+		<property name="map">
+			<map>
+				<entry key="4" value-ref="prizeHistoryNotify4_0"></entry>
+				<entry key="5" value-ref="prizeHistoryNotify5_0"></entry>
+				<entry key="6" value-ref="prizeHistoryNotify5_0"></entry>
+				<entry key="7" value-ref="prizeHistoryNotify5_0"></entry>
+				<entry key="8" value-ref="prizeHistoryNotify5_0"></entry>
+				<entry key="9" value-ref="prizeHistoryNotify9_0"></entry>
+				<entry key="10" value-ref="prizeHistoryNotify10_0"></entry>
+				<entry key="11" value-ref="prizeHistoryNotify11_0"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="prizeHistoryNotify4_0"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify4_0"
+		autowire="byName" scope="prototype" />
+
+
+	<bean id="prizeHistoryNotify5_0"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify5_0"
+		autowire="byName" scope="prototype" />
+
+	<bean id="prizeHistoryNotify9_0"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify9_0"
+		autowire="byName" scope="prototype" />
+	<bean id="prizeHistoryNotify10_0"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify10_0"
+		autowire="byName" scope="prototype" />
+	<bean id="prizeHistoryNotify11_0"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeHistoryNotify11_0"
+		autowire="byName" scope="prototype" />
+
+	<!-- 开奖公告查询 -->
+	<bean id="prizeInfoNotify"
+		class="com.yuncai.modules.lottery.software.lottery.PrizeInfoNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--版本控制 -->
+	<bean id="versionNotify"
+		class="com.yuncai.modules.lottery.software.lottery.VersionNotify"
+		autowire="byName" scope="prototype" />
+
+
+	<!--农历获取 -->
+	<bean id="lunarCalendarNotify"
+		class="com.yuncai.modules.lottery.software.lottery.LunarCalendarNotify"
+		autowire="byName" scope="prototype" />
+
+
+	<!--获取当前彩期-->
+	<bean id="currentIsusesNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CurrentIsusesNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--获取追号彩期列表-->
+	<bean id="afterCurrentTermListNotify"
+		class="com.yuncai.modules.lottery.software.lottery.AfterCurrentTermListNotify"
+		autowire="byName" scope="prototype" />
+	<!--中奖查询响应最大中奖查询-->
+	<bean id="lotteryMaxWinNotity"
+		class="com.yuncai.modules.lottery.software.lottery.LotteryMaxWinNotity"
+		autowire="byName" scope="prototype" />
+	<!--用户资料查询-->
+	<bean id="memberInfoNotity"
+		class="com.yuncai.modules.lottery.software.lottery.MemberInfoNotity"
+		autowire="byName" scope="prototype" />
+	<!--用户积分查询-->
+	<bean id="memberScoreQueryNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberScoreQueryNotify"
+		autowire="byName" scope="prototype" />
+	<!--账户明细查询-->
+	<bean id="memberWalletLineNotify"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotify"
+		autowire="byName" scope="prototype">
+		<property name="map">
+			<map>
+				<entry key="5" value-ref="memberWalletLineNotify_5"></entry>
+				<entry key="6" value-ref="memberWalletLineNotify_6"></entry>
+				<entry key="7" value-ref="memberWalletLineNotify_7"></entry>
+				<entry key="8" value-ref="memberWalletLineNotify_8"></entry>
+				<entry key="9" value-ref="memberWalletLineNotify_9"></entry>
+				<entry key="10" value-ref="memberWalletLineNotify_8"></entry>
+				<entry key="11" value-ref="memberWalletLineNotify_8"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="memberWalletLineNotify_5"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotifybefore6"
+		autowire="byName" scope="prototype" />
+	<bean id="memberWalletLineNotify_6"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotify_6"
+		autowire="byName" scope="prototype" />
+	<bean id="memberWalletLineNotify_7"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotify_7"
+		autowire="byName" scope="prototype" />
+	<bean id="memberWalletLineNotify_8"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotify_8"
+		autowire="byName" scope="prototype" />
+	<bean id="memberWalletLineNotify_9"
+		class="com.yuncai.modules.lottery.software.lottery.MemberWalletLineNotify_9"
+		autowire="byName" scope="prototype" />
+	<!-- 手机充值　chargeLineNotify -->
+
+	<bean id="chargeLineNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ChargelineNotify"
+		autowire="byName" scope="prototype" />
+
+
+	<!--追号查询-->
+	<bean id="chaseTaskNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ChaseTaskNotify"
+		autowire="byName" scope="prototype" />
+	<!--追号详情-->
+	<bean id="chaseTaskDetailNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ChaseTaskDetailNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--交易流水方案详情-->
+	<bean id="transactionPlanDetailNotify"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify"
+		autowire="byName" scope="prototype">
+		<property name="map">
+			<map>
+				<entry key="4"
+					value-ref="transactionPlanDetailNotify4_0">
+				</entry>
+				<entry key="5"
+					value-ref="transactionPlanDetailNotify5_0">
+				</entry>
+				<entry key="6"
+					value-ref="transactionPlanDetailNotify6_0">
+				</entry>
+				<entry key="7"
+					value-ref="transactionPlanDetailNotify7_0">
+				</entry>
+				<entry key="8"
+					value-ref="transactionPlanDetailNotify8_0">
+				</entry>
+				<entry key="9"
+					value-ref="transactionPlanDetailNotify9_0">
+				</entry>
+				<entry key="10"
+					value-ref="transactionPlanDetailNotify10_0">
+				</entry>
+				<entry key="11"
+					value-ref="transactionPlanDetailNotify11_0">
+				</entry>
+			</map>
+		</property>
+
+	</bean>
+
+	<bean id="transactionPlanDetailNotify4_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify4_0"
+		autowire="byName" scope="prototype" />
+
+	<bean id="transactionPlanDetailNotify5_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify5_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify6_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify6_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify7_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify7_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify8_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify8_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify9_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify9_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify10_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify10_0"
+		autowire="byName" scope="prototype" />
+	<bean id="transactionPlanDetailNotify11_0"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotify11_0"
+		autowire="byName" scope="prototype" />
+	<!--用户建议反馈-->
+	<bean id="userProposeNotify"
+		class="com.yuncai.modules.lottery.software.lottery.UserProposeNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--邮箱找回密码-->
+	<bean id="getPasswordByEmailNotify"
+		class="com.yuncai.modules.lottery.software.lottery.GetPasswordByEmailNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--短信验证通过后找回密码-->
+	<bean id="modifyPasswordNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ModifyPasswordNotify"
+		autowire="byName" scope="prototype" />
+
+	<!--交易流水明细接口请求附加竞彩比赛sp详细(4017)-->
+	<bean id="transactionPlanDetailNotifySP"
+		class="com.yuncai.modules.lottery.software.lottery.TransactionPlanDetailNotifySP"
+		autowire="byName" scope="prototype" />
+	<!--关于云彩-->
+	<bean id="introduceOwerSelf"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf"
+		autowire="byName" scope="prototype">
+		<property name="map">
+			<map>
+				<entry key="5" value-ref="introduceOwerSelf5_0"></entry>
+				<entry key="6" value-ref="introduceOwerSelf6_0"></entry>
+				<entry key="7" value-ref="introduceOwerSelf7_0"></entry>
+				<entry key="8" value-ref="introduceOwerSelf8_0"></entry>
+				<entry key="9" value-ref="introduceOwerSelf9_0"></entry>
+				<entry key="10" value-ref="introduceOwerSelf10_0"></entry>
+			</map>
+		</property>
+		
+	</bean>
+	<bean id="introduceOwerSelf5_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf5_0"
+		autowire="byName" scope="prototype" />
+	<bean id="introduceOwerSelf6_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf6_0"
+		autowire="byName" scope="prototype" />
+	<bean id="introduceOwerSelf7_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf7_0"
+		autowire="byName" scope="prototype" />
+	<bean id="introduceOwerSelf8_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf8_0"
+		autowire="byName" scope="prototype" />
+	<bean id="introduceOwerSelf9_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf9_0"
+		autowire="byName" scope="prototype" />
+	<bean id="introduceOwerSelf10_0"
+		class="com.yuncai.modules.lottery.software.lottery.IntroduceOwerSelf10_0"
+		autowire="byName" scope="prototype" />
+	<!--手机异常信息反馈保存-->
+	<bean id="phoneErrorNotify"
+		class="com.yuncai.modules.lottery.software.lottery.PhoneErrorNotify"
+		autowire="byName" scope="prototype" />
+	<!--提款信息验证-->
+	<bean id="drawindValidNotify"
+		class="com.yuncai.modules.lottery.software.lottery.DrawindValidNotify"
+		autowire="byName" scope="prototype" />
+
+
+
+
+	<!-- service -->
+	<bean id="softwareService"
+		class="com.yuncai.modules.lottery.software.service.SoftwareService"
+		autowire="byName" scope="prototype" />
+
+	<!-- 查询彩金卡菜单 -->
+	<bean id="cardMenuNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CardMenuNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 查询彩金卡列表 -->
+	<bean id="cardListNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CardListNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 使用彩金卡 -->
+	<bean id="cardRechargeNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CardRechargeNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 转赠彩金卡 -->
+	<bean id="cardGiftNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CardGiftNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 查询红包列表 -->
+	<bean id="giftListNotify"
+		class="com.yuncai.modules.lottery.software.lottery.GiftListNotify"
+		autowire="byName" scope="prototype" />
+	<!-- VIP红包赠送 -->
+	<bean id="vipGiftNotify"
+		class="com.yuncai.modules.lottery.software.lottery.VipGiftNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 查询VIP红包列表 -->
+	<bean id="vipGiftListNotify"
+		class="com.yuncai.modules.lottery.software.lottery.VipGiftListNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 查询VIP返利详情 -->
+	<bean id="vipBonusLineNotify"
+		class="com.yuncai.modules.lottery.software.lottery.VipBonusLineNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 前端提示语管理 -->
+	<bean id="cluesNotify"
+		class="com.yuncai.modules.lottery.software.lottery.CluesNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 广告图管理 -->
+	<bean id="apkPicNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ApkPicNotify"
+		autowire="byName" scope="prototype" />
+	<!--彩种管理 -->
+	<bean id="isusesMangeNotify"
+		class="com.yuncai.modules.lottery.software.lottery.IsusesMangeNotify"
+		autowire="byName" scope="prototype" />
+	<!--公告管理 -->
+	<bean id="apkNoticeNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ApkNoticeNotify"
+		autowire="byName" scope="prototype" />
+	<!--PUSH管理 -->
+	<bean id="apkPushNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ApkPushNotify"
+		autowire="byName" scope="prototype" />
+	<bean id="activitiesManagementModuleNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ActivitiesManagementModuleNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 申请vip -->
+	<bean id="applyForVipNotify"
+		class="com.yuncai.modules.lottery.software.lottery.ApplyForVipNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 记录用户访问轨迹 -->
+	<bean id="accountTraceNotify"
+		class="com.yuncai.modules.lottery.software.lottery.AccountTraceNotify"
+		autowire="byName" scope="prototype" />
+	<!-- 银行地域信息接口  -->
+	<bean id="bankDetailNotify"
+		class="com.yuncai.modules.lottery.software.lottery.BankDetailNotify"
+		autowire="byName" scope="prototype" />
+	<!-- wap充值 -->
+	<bean id="chargelineCommonNotify"
+		class="com.yuncai.modules.lottery.software.wap.ChargelineCommonNotify"
+		autowire="byName" scope="prototype" />
+
+	<!-- 微信分享记录保存接口  -->
+	<bean id="userShareRecordNotify"
+		class="com.yuncai.modules.lottery.software.lottery.UserShareRecordNotify"
+		autowire="byName" scope="prototype" />
+
+</beans>

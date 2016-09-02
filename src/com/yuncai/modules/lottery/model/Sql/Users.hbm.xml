@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.yuncai.modules.lottery.model.Sql.Users"
+		table="t_users">
+		<!--
+			<id name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true"/>
+			<generator class="native" />
+			</id>
+		-->
+		<id name="name" column="name" type="java.lang.String"
+			length="40">
+			<generator class="assigned" />
+		</id>
+		<!--
+			<property name="name" type="java.lang.String">
+			<column name="NAME" length="40" not-null="true" />
+			</property
+		-->
+		<property name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" length="50" />
+		</property>
+
+		<property name="realityName" type="java.lang.String">
+			<column name="REALITYNAME" length="100" />
+		</property>
+
+		<property name="mobile" type="java.lang.String">
+			<column name="MOBILE" length="100" />
+		</property>
+
+		<property name="certNo" type="java.lang.String">
+			<column name="IDCardNumber" />
+		</property>
+
+		<property name="email" type="java.lang.String">
+			<column name="Email" />
+		</property>
+
+		<property name="bankName" type="java.lang.String">
+			<column name="BankName" />
+		</property>
+
+		<property name="alipayName" type="java.lang.String">
+			<column name="AlipayName" />
+		</property>
+
+		<property name="bandCardNumber" type="java.lang.String">
+			<column name="BankCardNumber" />
+		</property>
+
+		<property name="balance" type="java.lang.Double">
+			<column name="Balance" />
+		</property>
+
+		<property name="freeze" type="java.lang.Double">
+			<column name="Freeze" />
+		</property>
+
+		<property name="siteID" type="java.lang.Integer">
+			<column name="SiteID" />
+		</property>
+		<property name="isEmailValided" type="boolean">
+			<column name="isEmailValided" />
+		</property>
+
+		<property name="isMobileValided" type="boolean">
+			<column name="isMobileValided" />
+		</property>
+		<property name="buySendSms">
+			<column name="buySendSMS" />
+		</property>
+		<property name="phoneNo" type="java.lang.String">
+			<column name="phoneNo" />
+		</property>
+		<property name="isPhoneBinding" type="boolean">
+			<column name="IS_PHONE_BINDING" />
+		</property>		
+		
+		  <property name="nickName" type="java.lang.String">
+            <column name="NickName"  />
+        </property>
+        <property name="mobilBelongingTo" type="java.lang.String">
+            <column name="MobilBelongingTo"  />
+        </property>
+	</class>
+</hibernate-mapping>

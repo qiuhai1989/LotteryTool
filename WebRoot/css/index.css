@@ -1,0 +1,45 @@
+#header,#arear,#footer{ width:1000px; margin:0 auto}
+#header .headerMenu .menu ul .menuTip a{ color:#9C152A; display:block;background:url(../images/menuDj.gif) repeat-x left top;}
+
+/*内容样式开始*/
+#arear{ clear:both;}
+#arear .contLeft{float:left;width:225px; margin-left:8px !important; margin-left:4px; }
+#arear .contLeft .typesCont{float:left;width:223px;background-color:#FFFDF3;border:1px solid #EACDAE;border-top:none;}
+#arear .contLeft .typesCont ul{ float:left; width:213px; border-bottom:1px dashed #EACDAE; padding:8px 5px;}
+#arear .contLeft .typesCont ul li{ float:left; width:71px; color:#7D7D7D; display:block;}
+#arear .contLeft .typesCont ul li a{ color:#A6090C}
+#arear .contLeft .typesCont ul li a:hover{ color:#A6090C; text-decoration:underline}
+#arear .contLeft .typesCont ul .typesTitle01{ float:left; width:40px; height:26px; display:block;background:url(../images/jc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesCont ul .typesTitle02{ float:left; width:40px; height:26px; display:block;background:url(../images/fc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesCont ul .typesTitle03{ float:left; width:40px; height:26px; display:block;background:url(../images/gp.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesCont ul .typesTitle04{ float:left; width:40px; height:26px; display:block;background:url(../images/zq.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+#arear .contLeft .typesCont ul .typesTitle05{ float:left; width:40px; height:26px; display:block;background:url(../images/tc.jpg) no-repeat left top; padding-left:30px; color:#7D7D7D}
+
+#arear .contLeft .hotLottery{ float:left; width:223px; border:1px solid #EFD797; margin-top:10px; } 
+.hotLottery .hotLotteryTitle{ float:left; width:223px;background:url(../images/hotLotteryBg.jpg) no-repeat left top; height:45px; }
+.hotLottery .hotLotteryTitle h2{ float:left; font-weight:bold; font-size:14px; color:#D10000;line-height:45px; padding-left:5px; display:block; }
+.hotLottery .hotLotteryTitle ul{}
+.hotLottery .hotLotteryTitle li{ float:right; display:block; height:38px; width:50px; line-height:38px;cursor:pointer;text-align:center;color:#3A3A3A }
+.hotLottery .hotLotteryTitle li.bg{ display:block;color:#3A3A3A;background:url(../images/hotLotteryDj.gif) no-repeat left top;}
+
+#arear .contLeft .leftBanner{ float:left; width:225px; margin-top:10px;}
+#arear .contLeft .ranking{float:left; width:223px; border:1px solid #C7C7C7; margin-top:10px; padding-bottom:5px;}
+#arear .contLeft .ranking h2{float:left; width:213px; display:block;font-weight:bold; padding-left:10px; height:32px; line-height:32px; font-size:14px;background:url(../images/rankingBg.jpg) repeat-x left top;}
+#arear .contLeft .ranking .rankingList{ float:left; width:223px;}
+#arear .contLeft .ranking .rankingList table th{font-weight:normal;line-height:30px}
+#arear .contLeft .ranking .rankingList table{border-collapse:collapse;}
+#arear .contLeft .ranking .rankingList table td{ padding:4px 1px;}
+#arear .contLeft .ranking .rankingList table .money{ color:#FF0000}
+#arear .contLeft .ranking .rankingList table tr{background-color:expression((this.sectionRowIndex%2==0)?"#F5F5F5":"#FFF")}
+#arear .contLeft .ranking .rankingList table tr td .detail{ color:#3366CC}
+#arear .contLeft .ranking .rankingList table tr td .detail:hover{ color:#3366CC; text-decoration:underline}
+
+#arear .contLeft .guide{ float:left; width:223px; border:1px solid #C7C7C7; margin-top:10px}
+#arear .contLeft .guide h2{ float:left; width:203px; padding:0 10px;display:block; background-color:#F5F5F5; line-height:30px; border-bottom:1px solid #C7C7C7; font-weight:bold; font-size:14px;}
+#arear .contLeft .guide h2 span{ float:right; display:block; font-weight:normal; font-size:12px;}
+#arear .contLeft .guide ul{float:left; width:203px; padding:5px 10px;}
+#arear .contLeft .guide ul li{ float:left; width:183px; padding-left:20px; display:block; line-height:24px;background:url(../images/guideIco.jpg) no-repeat left center; }
+#arear .contLeft .contact{ float:left;width:223px; height:122px; border:1px solid #C7C7C7; margin-top:10px;background:url(../images/contact.jpg) no-repeat left top;}
+#arear .contLeft .contact ul{ float:left; width:130px; margin-top:20px; padding-left:90px;}
+#arear .contLeft .contact li{ float:left; line-height:24px; display:block; width:130px;color:#3366CC; }
+/*内容样式结束*/

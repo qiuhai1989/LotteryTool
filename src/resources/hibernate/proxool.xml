@@ -1,0 +1,42 @@
+<proxool-config>
+	<proxool>
+		<alias>DBPool</alias>
+		<!-- 配置Oracle-->
+		 <driver-url><![CDATA[jdbc:oracle:thin:@192.168.0.1:1521:FootballData]]></driver-url>
+        <driver-class>oracle.jdbc.driver.OracleDriver</driver-class> 
+		
+		<driver-properties>
+			<property name="user" value="clweb_fb_user" />
+			<property name="password" value="LOTTERY" />
+		</driver-properties>
+		<!-- 最大并发连接数 -->
+		<simultaneous-Build-Throttle>50</simultaneous-Build-Throttle>
+		<!-- 最大连接数(默认15个),超过了这个连接数,再有请求时,就排在队列中等候,最大的等待请求数由maximum-new-connections决定 -->
+	
+		<maximum-connection-count>200</maximum-connection-count>
+		<!-- 最小连接数(默认5个) -->
+		<minimum-connection-count>30</minimum-connection-count>
+		<!-- 如果侦察线程发现闲置连接，则会使用这个SQL语句来对这些连接进行检查 -->
+		<house-keeping-test-sql>select CURRENT_DATE</house-keeping-test-sql>
+		
+		<!-- 活动时间 -->
+		<maximum-active-time>90000</maximum-active-time>
+		
+		<!-- 连接池中可用的连接数量,最小默认为5 -->
+		<prototype-count>5</prototype-count>
+		
+		
+		<!-- proxool自动侦察各个连接状态的时间间隔(毫秒),侦察到空闲的连接就马上回收,超时的销毁 默认30秒 -->
+		
+		<house-keeping-sleep-time>30000</house-keeping-sleep-time>
+		
+		
+		<!-- 指一个连接最大的存活时间（毫秒为单位），超过这个时间，连接会被杀死。默认值是4小时 -->
+		<maximum-connection-lifetime>90000</maximum-connection-lifetime>
+		
+		<!-- 这个参数帮助我们确定连接池的状态，如果在这个时间阀值内（单位为毫秒）拒绝了一个连接，就认为是过载了。默认值是60 -->
+		<overload-without-refusal-lifetime>60000</overload-without-refusal-lifetime>
+		
+		
+	</proxool>
+</proxool-config>  
